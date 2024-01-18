@@ -1,0 +1,168 @@
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff') format('woff'); font-weight:700; font-style:normal; }
+
+body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px;  /* 글자크기 */
+    color: #3D3D3D; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.2; /* auto */
+    word-break: keep-all;  /* 단어를 묶어서 줄바꿈 */
+    }   
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280PX; /* 홈페이지 넓이 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+/* 태그초기화 - 태그의 기본 스타일 제거 */
+* { 
+    padding: 0; /* 모든 태그의 여백 삭제*/
+    margin: 0;
+    box-sizing: border-box; 
+    /* padding, border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+/* 다중선택자 : 쉼표로 연결한 선택자 모두에게 동일한 스타일을 적용할때 사용 */
+ul, ol, li {
+    list-style: none; /* ul li 앞의 동그라미 삭제 */
+}
+a { /* a태그는 파란색의 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; /* 색상은 파란색 말고 누군가가 상속해준 스타일을 받아 적용*/
+}
+
+header {
+    height: 100px;
+}
+header .logo {
+    float: left;
+    margin: 32px 0 0 0; /* 위-오-아래-왼 */
+}
+header .logo a {
+    display: block; /*a태그는 대상을 글씨로 인식함 a태그 크기와 사진 크기 같게 하기 위해 block 지정*/
+}
+header .gnb {
+    float: right;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    font-size: 22px;
+    color: #1d1d1d;
+    padding: 36px 28px 36px 28px;
+    display: block;
+    /* a태그는 인라인 태그라 padding 제대로 적용안됨 적용시키기 위해서 block태그로 변경 */
+}
+/* a태그에 마우스를 오버했을때 - 가상선택자 */
+header .gnb ul li a:hover {
+    text-decoration: underline;
+}
+
+.visual {
+    /* 경로에서 ../는 폴더 밖으로 나가라는 명령
+       background에는 아무리 큰 이미를 넣어도 해당 영역의 높이만큼만 보임
+       큰 이미를 넣었다고 영역이 커지지 않음 전체 보이게 하려면 높이를 지정해야함*/
+    height: 800px;
+    background: url(../images/visual_bg.png) center center no-repeat;
+    color: #fff;
+    /* 배경색 때문에 그 내부 글자색상이 달라졌다면 대표색을 background랑 같이 선언해주는 것이 이해가 쉬움*/
+    text-align: center;
+}
+.visual h2 {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.01em; /* 자간*/
+    padding: 263px 0 15px 0; /* 여백을 margin적용했는데 이상하면 padding로 바꾸면 됨 */
+}    
+.visual h2 strong { 
+    color: #122921;;
+    font-weight: inherit; /* strong 지정시 bold로 자동지정됨 inherit 선언해야됨 */
+}
+.visual p {
+    font-size: 18px;
+}
+
+.biz h2 {
+    font-size: 35px;
+    color: #1d1d1d;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-align: center;
+    margin: 155px 0 47px 0;
+    line-height: 0.7;
+}
+.biz h2 strong {
+    font-size: 20px;
+    color: #3d3d3d;
+    font-size: 400;
+    letter-spacing: 0;
+}
+.biz ul {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.biz ul li h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 14px 0 8px 0;
+}
+.biz ul li a {
+    border: 1px solid #ccc;
+    padding: 15px 82px 15px 82px;
+    display: inline-block;
+    /*a태그는 인라인 태그라서 padding 적용안됨
+    display:block을 주면 넓이 100% 라는 뜻으로 
+    나를 감싸는 요소 넓이인 li로 인식 
+    padding만 적용시키려면 display:illine-block;*/
+    margin: 25px 0 0 0;
+}
+
+.brand {
+    height: 800px;
+    background: url(../images/brand_bg.png) center center no-repeat;
+    margin: 162px 0 0 0;
+    color: #fff;
+    text-align: center;
+}
+.brand h2 {
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: -0.0.1em;
+    padding: 312px 0 0 0;
+}
+.brand p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 22px 0 58px 0;
+}
+.brand a {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    /* 선을 흰색으로 주고 opcity 60% 준 경우*/
+    padding: 16px 42px 16px 42px;
+    display: inline-block;
+}
+
+footer {
+    background-color: #0d0d0d;
+    color: rgba(255, 255, 255, 0.8);
+    padding: 50px 0 60px 0;
+    letter-spacing: -0.02em;
+    /* footer는 나중에 반응형을 구현할 것을 감안해서 
+    위아래 여백을 footer가 padding으로 처리 */
+}
+footer .f_nav {
+    display: flex;
+    margin: 0 0 20px 0;
+    /* 하단의 copyright와의 여백 */
+}
+footer .f_nav li {
+    margin: 0 20px 0 0;
+    /* 각각의 li 사이의 여백 */
+}
+footer .f_nav .privacy {
+    font-weight: 700;
+}
+footer .f_nav .copyright {
+    color: rgba(255, 255, 255, 0.6);
+}

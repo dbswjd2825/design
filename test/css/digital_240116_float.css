@@ -1,0 +1,70 @@
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff'); font-weight:400; font-style:normal; }
+@font-face { font-family:'Pretendard'; src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff') format('woff'); font-weight:900; font-style:normal; }
+body {
+    font-family: 'Pretendard', serif;
+    font-size: 15px; 
+    color: #3D3D3D;
+    font-weight: 400;
+    line-height: 1.2; 
+    word-break: keep-all; 
+    }   
+.wrapper {
+    width: 1280PX; 
+    margin: 0 auto; 
+}
+/* 태그초기화 - 태그의 기본 스타일 제거 */
+* { 
+    padding: 0; /* 모든 태그의 여백 삭제*/
+    margin: 0;
+    box-sizing: border-box; 
+    /* padding, border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+/* 다중선택자 : 쉼표로 연결한 선택자 모두에게 동일한 스타일을 적용할때 사용 */
+ul, ol, li {
+    list-style: none; /* ul li 앞의 동그라미 삭제 */
+}
+.tit {
+    background-color: #3D3D3D;
+    color: #fff;
+    /* 배경색을 진하게 준 경우에는
+    그 배경색에서 사용되는 기본 글자색상을 같이 지정하는게 좋음*/
+    padding: 55px 0 55px 0;
+    margin: 0 0 65px 0;
+}
+.tit h1 {
+    font-size: 40px;
+    font-size: 900;
+    margin: 0 0 15px 0;
+}
+.tit p {
+    color: rgba(255, 255, 255,0.8);
+}
+.service ul li {
+    background-color: #f4f4f4;
+    width: 408px;
+    height: 354px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 40px 40px 0 40px;
+    float: left;
+}
+/* li가 많을때 그 많은 li중에서 마지막 li를 :last-child로 선택함 */
+.service ul li:last-child{
+    margin-right: 0;
+} 
+.service ul li h2 {
+    font-size: 30px;
+    font-weight: 900;
+    color: #1d1d1d;
+}
+.service ul li .sub_tit {
+    font-size: 20px;
+    font-weight: 900;
+    margin: 15px 0 35px 0;
+}
+/* h2에 있는 p에 있는 모든 strong에 동일한 스타일 주기*/
+.service ul li strong {
+    color: #ff71be;
+}
+.clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
+.clearfix{display:block;}
