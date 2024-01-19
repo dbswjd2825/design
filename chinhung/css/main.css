@@ -75,7 +75,7 @@ header .gnb ul li a:hover {
     padding: 263px 0 15px 0; /* 여백을 margin적용했는데 이상하면 padding로 바꾸면 됨 */
 }    
 .visual h2 strong { 
-    color: #122921;;
+    color: #d0fc5b;
     font-weight: inherit; /* strong 지정시 bold로 자동지정됨 inherit 선언해야됨 */
 }
 .visual p {
