@@ -68,11 +68,87 @@
                 </div>
             </section>
             <section class="bbs">
-                <div class="wrapper"></div>
+                <div class="wrapper">
+                    <div class="notice">
+                        <!-- 제목과 설명글 등의 묶음을 tit -->
+                        <div class="tit">
+                            <h2>DTC 공지사항</h2>
+                            <p>대전복합터미널의 새로운 소식을 만나보세요.</p>
+                            <a href="#">더보기</a>
+                            <!-- 원래 더보기는 공지사항 목록 ul 태그 밑에 존재해야함 
+                            웹접근성상 공지사항 최근 게시물 1/2/3 보고 더 보고싶으면 
+                            더보기를 누르세요라는 흐름으로 코딩해야함 -->
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <!-- 제목은 strong 날짜는 span 태그로 묶음
+                                    코딩할때 좌우로 떨어져 배치되기 때문 -->
+                                    <strong>고객감동브랜드지수 8년 연속 1위</strong>
+                                    <span>2024.01.15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>터미널 시설 전화번호 안내</strong>
+                                    <span>2023.12.10</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <strong>제17회 대한민국 안전대상 [우수기업상]...</strong>
+                                    <span>2023.10.09</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div> <!--notice-->
+                    <div class="vidio">
+                        <h2>DTC 홍보영상</h2>
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    <img src="images/bbs_vidio01.png" alt="영상 썸네일">
+                                    <strong>버스터미널, 특별한 예술공간으로 변신</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/bbs_vidio02.png" alt="영상 썸네일">
+                                    <strong>DTC 아트센터) 대전TJB '현대 미술로 세계를 보다'</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img src="images/bbs_vidio03.png" alt="영상 썸네일">
+                                    <strong>DTC 아트센터) 대전블루스 '2021 봄 기획전'</strong>
+                                </a>
+                            </li>
+                        </ul>
+                    </div> <!--video-->
+                </div>
             </section>       
         </div> <!--container-->
         <footer class="footer">
-            <div class="wrapper"></div>
+            <div class="wrapper">
+                <!-- footer에 있는 메뉴는 nav 태그를 잘 사용하지 않음 -->
+                <ul class="f_nav">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">사이트맵</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li class="privacy"><a href="#">개인정보취급방침</a></li>
+                    <!-- li로 된 항목은 순서가 바뀌어도 스타일이 유지되어야 함
+                    특정항목에만 색상을 변경하려고 한다면 반드시 class를 별도로 줘야함
+                    last-child로 주면 안됨  -->
+                </ul>
+                <div class="f_info">
+                    <span>대전복합터미널(주)</span>
+                    <!-- 주소 태그 address -->
+                    <address>주소 : 대전 동구 동서대로 1695번길 30</address>
+                    <span>TEL : 1668-3000</span>
+                    <span>사업자등록번호 : 306-81-02924</span>
+                </div>
+                <div class="copyright">COPYRIGHT 대전복합터미널(주) ALL RIGHTS RESERVED.</div>
+            </div>
         </footer>
     </div> <!--wrap-->
 </body>
