@@ -1,0 +1,134 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-display: swap;
+    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(./woff/Pretendard-Black.woff) format('woff');
+}
+body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px;  /* 글자크기 */
+    color: #3D3D3D; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.2; /* auto */
+    letter-spacing: -0.06em; /* 자간 */
+    word-break: keep-all;  /* 단어를 묶어서 줄바꿈 */
+    }   
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280PX; /* 홈페이지 넓이 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넒이가 작을때 가로스크롤바가 생성되는데
+    오른쪽에 background가 짤리는 현상이 생김
+    가로스크롤바가 생성되었을때도 정상적으로 서비스 하기 위해서 최소 넓이를 입력*/
+}
+/* 태그초기화 - 태그의 기본 스타일 제거 */
+* { 
+    padding: 0; /* 모든 태그의 여백 삭제*/
+    margin: 0;
+    box-sizing: border-box; 
+    /* padding, border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+/* 다중선택자 : 쉼표로 연결한 선택자 모두에게 동일한 스타일을 적용할때 사용 */
+ul, ol, li {
+    list-style: none; /* ul li 앞의 동그라미 삭제 */
+}
+a { /* a태그는 파란색의 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; /* 색상은 파란색 말고 누군가가 상속해준 스타일을 받아 적용*/
+}
+
+.header {
+    height: 100px;
+}
+.header .logo {
+    float: left; /* 내 자신이 감싸는 영역의 왼쪽으로 이동 */
+    margin: 23px 0 0 0;
+}
+.header .gnb {
+    float: right; /* 내 자신이 감싸는 영역의 오른쪽으로 이동*/
+}
+.header .gnb ul {
+    display: flex; /* 내 자식 요소들이 좌우로 배취됨*/
+}
+.header .gnb ul li a {
+    font-size: 20px;
+    color: #1d1d1d;
+    padding: 35px 20px 35px 20px;
+    display: block; /* a태그는 inline태그라서 padding이 적용되지 않음
+    block태그로 변경하여 값이 적용되도록 함
+    header의 높이가 100px이라 a태그의 높이가 100px을 넘으면 안됨*/
+}
+
+.visual {
+    height: 800px;
+    background: url(../images/visual_bg.png) center center no-repeat;
+    /* 배경에 큰 이미지를 넣는다고 이미지가 모두 다 보이는 것은 아님
+    배경이 모두 보이려면 반드시 영역에 높이를 줘야됨*/
+    color: #fff;
+}
+.visual strong {
+    font-size: 23px;
+    font-weight: 400;
+    padding: 334px 0 0 0; /* 상단 여백이 margin이 적용이 안되서 padding로 수정*/
+    display: block; /* 여백이 적용되지 않아 block*/
+}
+.visual h2{
+    font-size: 40px;
+    font-weight: 900;
+}
+
+/* .biz .art와 .biz .edu 둘다에게 동일한 스타일을 적용할 때 사용 - 다중선택자*/
+.biz .art, .biz .edu {
+    display: flex; /* inner와 img가 좌우로 배치*/
+}
+/* DTC 아트센터와 이구열 장학재단 h2를 한꺼번에 스타일 줄 수 있음
+둘이 스타일이 동일하기 때문에 각자 감싸는 영역 ark edu 뺴고 호출
+.inner도 선택자로 잘 안부르는 편임*/
+.biz .edu {
+    justify-content: flex-end; /* 내부 콘텐츠를 감싸는 영역 오른쪽에 붙이기 */
+    text-align: right; /*이구열 장학재단의 콘텐츠들은 오른쪽 정렬*/
+}
+.biz .art .inner {
+    margin: 0 0 0 48px
+}
+.biz .edu .inner {
+    margin: 0 48px 0 0;
+}
+
+.biz h2 {
+    font-size: 40px;
+    color: #1d1d1d;
+    font-weight: 900;
+    margin: 66px 0 8px 0;
+}
+.biz .sub_tit {
+    font-size: 23px;
+    color: #2d2d2d;
+    line-height: 1;
+    margin: 0 0 22px 0;
+}
+.biz .btn_wrap {
+    margin: 15px 0 0 0;
+}
+.biz .btn_wrap a {
+    border: 1px solid #ccc;
+    padding: 12px 16px 12px 16px; /* boder 안쪽 여백 */
+    display: inline-block; /* padding값을 적용시키기 위해 display:block;을 주지만
+    가로 100%로 넓어져서 display: inline-block;으로 변경
+    display: inline-block;은 내가 주지 않은 여백이 좌우에 들어감
+    그 여백을 감안하고 좌우여백을 주면됨 (글자 행간 감안하고 여백 주듯이) */
+}
+.biz .art .btn_wrap a {
+    margin: 0 5px 0 0; /*아트센터는 버튼 오른쪽 여백*/
+}
+.biz .edu .btn_wrap a {
+    margin: 0 0 0 5px; /*아트센터는 버튼 오른쪽 여백*/
+}
