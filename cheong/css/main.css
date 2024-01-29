@@ -57,7 +57,12 @@ h1, h2, h3, h4, h5, h6, strong {
     font-size: inherit;
     font-weight: inherit;
 }
-
+button{
+    background-color: transparent; /* 배경투명 */
+    border: 0; /* 테두리 삭제 */
+    color: inherit; /* 브라우저가 주는 값 삭제 */
+    font-family: inherit; /* button은 서체도 바뀜 - 상속 */
+}
 .header {
     /* body를 기준으로 정렬
     position 값을 주면 (예외 relative) block요소라도
@@ -291,7 +296,7 @@ h1, h2, h3, h4, h5, h6, strong {
 .community .tit .sub_tit {
     font-size: 25px;
     font-weight: 400;
-    color: rgba(256,256,256,0.8);
+    color: rgba(255,255,255,0.8);
 }
 .community .tit h2 {
     font-size: 80px;
@@ -315,7 +320,7 @@ h1, h2, h3, h4, h5, h6, strong {
     margin-bottom: 27px;
 }
 .community .notice ul li {
-    border-bottom: 1px solid rgba(256,256,256,0.4);
+    border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 .community .notice ul li:last-child {
     border-bottom: 0; /* 마지막 선 X*/
@@ -326,7 +331,7 @@ h1, h2, h3, h4, h5, h6, strong {
     justify-content: space-between;
 }
 .community .notice ul li a span {
-    color: rgba(256,256,256,0.8);
+    color: rgba(255,255,255,0.8);
 }
 .community .service {
     width: 390px;
@@ -381,6 +386,23 @@ h1, h2, h3, h4, h5, h6, strong {
 }
 .footer .f_nav li {
     margin-right: 38px;
+    /* border-right: 1px solid rgba(256,256,256,0.4);
+    li 메뉴 사이의 선은 border로 코딩 불가
+    높이 제어 안됨, 위아래 위치 조정이 안됨
+    그래서 before after 선택자를 이용해서 선을 그려줌 */
+    position: relative; /* after 가상선택자 정렬의 기준 */
+}
+.footer .f_nav li::after {
+    position: absolute; /* 위치를 자유롭게 조정하기 위해서 absolute */
+    right: -19px;
+    top: 5px;
+    width: 1px;
+    height: 11px;
+    background-color: rgba(255,255,255,0.4);
+    content: ""; /* before after 가상선택자는 content 필수 */
+}
+.footer .f_nav li:last-child:after{
+    display: none; /* 마지막 li의 선 숨기기 */
 }
 .footer .f_nav li.privacy {
     font-weight: 900;
@@ -392,4 +414,17 @@ h1, h2, h3, h4, h5, h6, strong {
 .footer .f_info address,
 .footer .f_info span {
     margin-right: 38px;
+}
+.footer .family_site button {
+    width: 150px;
+    line-height: 29px; 
+    /* 버튼의 높이는 행간으로 줌 버튼은 그 높이를 가져야 하고 
+    글자는 그 높이의 위아래 가운데 배치되어야 함
+    한번에 해결하기 위해 행간으로 높이를 부여함 
+    height로 주려면 글자 상단 여백을 추가로 줘야함*/
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px; /* 버튼 좌우 여백  */
 }
