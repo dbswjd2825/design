@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 400;
+    font-display: swap;
+    src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+@font-face {
+    font-family: 'Pretendard';
+    font-weight: 900;
+    font-display: swap;
+    src: local('Pretendard Black'), url(../fonts/Pretendard-Black.woff2) format('woff2'), url(./woff/Pretendard-Black.woff) format('woff');
+}
+html, body {
+    font-family: 'Pretendard', sans-serif;
+    font-size: 15px;  /* 글자크기 */
+    color: #3D3D3D; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.2; /* auto */
+    word-break: keep-all;  /* 단어를 묶어서 줄바꿈 */
+    }   
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280PX; /* 홈페이지 넓이 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넒이가 작을때 가로스크롤바가 생성되는데
+    오른쪽에 background가 짤리는 현상이 생김
+    가로스크롤바가 생성되었을때도 정상적으로 서비스 하기 위해서 최소 넓이를 입력*/
+}
+/* 브라우저 사이즈 640px 이하일때만 적용되는 스타일
+   1. pc버전과 선택자가 동일해야 함 
+   (선택자가 달라지면 css 우선순위가 변경되어 적용되지 않을수도 있음) 
+   2. 모바일은 pc 버전 스타일을 그대로 상속 받기 때문에 
+   모바일에서 변경되는 부분만 스타일을 적용해야 함
+   3. 모바일 스타일은 pc 스타일 아래에 선언되어야 함
+   css는 위에서 아래로 순차적으로 적용됨 */
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px;  /* 글자크기 */
+        }   
+    .wrapper { 
+        width: auto;
+        /* pc버전에서 준 넣이값을 해제 (취소) 
+        - block요소라면 넓이가 100%되는 것 */
+        margin: 0 20px; /* 모바일에서는 좌우에 20px 여백을 줌 */
+        }   
+    #wrap {
+        min-width: 320px; /* 모바일 최소 사이즈*/
+        }
+    } /* media */
+/* 태그초기화 - 태그의 기본 스타일 제거 */
+* { 
+    padding: 0; /* 모든 태그의 여백 삭제*/
+    margin: 0;
+    box-sizing: border-box; 
+    /* padding, border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+/* 다중선택자 : 쉼표로 연결한 선택자 모두에게 동일한 스타일을 적용할때 사용 */
+ul, ol, li {
+    list-style: none; /* ul li 앞의 동그라미 삭제 */
+}
+a { /* a태그는 파란색의 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; /* 색상은 파란색 말고 누군가가 상속해준 스타일을 받아 적용*/
+}
+address, em {
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐
+    디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+    최근 기울어짐 디자인을 하지 않음
+    그래서 태그에 있는 기본 기울어짐을 초기화 */
+    font-style: normal ;
+}
+/* 글자를 두껍게 하고 크기를 조정하는 태그 
+    - body가 선언한 속성대로 적용될 수 있도록 초기화
+    브라우저가 기본적으로 적용한 스타일 적용 X */
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+button{
+    background-color: transparent; /* 배경투명 */
+    border: 0; /* 테두리 삭제 */
+    color: inherit; /* 브라우저가 주는 값 삭제 */
+    font-family: inherit; /* button은 서체도 바뀜 - 상속 */
+}
+
+.notice {
+    margin: 84px 0 0 0;
+}
+.notice h2 {
+    font-size: 40px;
+    font-weight: 900;
+    color: #666;
+    margin-bottom: 40px;
+}
+.notice h2 strong {
+    color: #1d1d1d;
+}
+
+.notice ul {
+    display: flex;
+    justify-content: space-between;
+}
+.notice ul li {
+    width: 299px;
+}
+/* a태그 안에 많은 요소들이 들어가면 dispay를 주는게 좋음 */
+.notice ul li a {
+    display: block;
+}
+.notice ul li a strong {
+    display: block;
+    /* 제목은 strong, 날짜는 span태그로 정의함 - 디자인상 줄바꿈이 필요함 
+    이떄 display:block; 각 요소가 block 요소로 변경되어 둘이 한줄에 나타나지 않음 */
+    font-size: 20px;
+    color: #1d1d1d;
+    margin: 14px 0;
+}
+.notice ul li a span {
+    display: block;
+    font-size: 15px;
+    color: #3d3d3d;
+}
+.notice .notice_wrap {
+    position: relative;
+    /* more 정렬의 기준 */
+}
+.notice .more {
+    /* notice_wrap의 영역을 기준으로 */
+    position: absolute;
+    right: 0;
+    top: 55px;
+}
+.notice .more a {
+    border: 1px solid #999;
+    border-radius: 25px; /* 높이의 절반*/
+    line-height: 51px; 
+    /* 버튼은 line-height의 높이를 갖고 글자도 위아래 가운데 정렬함 */
+    padding: 0 33px;
+    display: block;
+}
+/* a 태그에 마우스를 오버했을 때 */
+.notice .more a:hover {
+    background-color: #999;
+    color: #fff;
+}
+@media screen and (max-width:640px){
+    .notice {
+        margin: 45px 0 0 0;
+    }
+    .notice h2 {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+    .notice ul {
+        display: block;
+        /* display:flex:를 해제하는 방법은 display:block 
+        block 요소로 변경하기 때문에 문제가 있다면 
+        inline block 또는 inline으로도 가능 */
+    }
+    .notice ul li {
+        width: auto;
+        /* 넓이값을 지우고 원래 속성대로 넓이를 갖게 함*/
+        margin-bottom: 20px;
+    }
+    /* a태그 안에 많은 요소들이 들어가면 dispay를 주는게 좋음 */
+    .notice ul li a {
+        display: flex; /* 왼쪽에 이미지, 오른쪽에 글자가 배치 */
+        align-items: flex-start; /*display:flex:는 좌우 요소의 높이를 동일하게 만드려는 속성이 있음
+        이를 해결하기 위해 align-items: flex-start; 을 줌 */
+        justify-content: space-between;
+    }
+    .notice ul li a img {
+        width: 96px;
+        /* 이미지 크기를 조정하려면 반드시 img에 width/height를 줘야함
+        감싸는 요소에는 값을 넣어도 크기는 변하지 않음
+        넓이나 높이 하나만 선언해도 나머지는 알아서 비율에 맞게 적용됨 
+        넓이나 높이 하나만 선언 (둘다 주면 비율 깨짐) */
+    }
+    /* 왼쪽의 이미지와 여백은 고정값
+       오른쪽의 글자는 브라우저 사이즈에 따라서 늘었다가 줄어듬
+       전체 넓이 100%에서 왼쪽이미지 넓이 + 여백을 뺀 갓이 글자의 넓이가 됨 */
+    .notice ul li a .inner {
+        width: calc(100% - 112px);
+    }
+    .notice ul li a strong {
+        font-size: 13px;
+        color: #1d1d1d;
+        margin: 0 0 8px 0; 
+        /* 제목을 무조건 2줄로 제한 */
+        line-height: 1.2;
+        height: 2.4em; /* 행간 X 2(제한할 줄의 수만큼) 단위는 em */
+        overflow: hidden; /* 높이를 제한했기 때문에 벗어나는ㄴ 글자는 숨김 */
+    }
+    .notice ul li a span {
+        font-size: 13px;
+    }
+    .notice .more {
+        /* absolute를 해제하고 원래 코딩순서대로 아래에 배치 */
+        position: relative;
+        right: auto; /* right, top 해제는 auto */
+        top: auto;
+        margin: 22px 0 0 0;
+        text-align: center; /* wtdth가 넣은 요소(ㅠblock)에서 inline요소를 가운데 정렬*/
+    }
+    .notice .more a {
+        border-radius: 20px; /* 높이의 절반*/
+        line-height: 35px; 
+        /* 버튼은 line-height의 높이를 갖고 글자도 위아래 가운데 정렬함 */
+        padding: 0 30px;
+        display: inline-block;
+    }
+     
+} /* media */

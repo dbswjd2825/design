@@ -63,6 +63,7 @@ button{
     color: inherit; /* 브라우저가 주는 값 삭제 */
     font-family: inherit; /* button은 서체도 바뀜 - 상속 */
 }
+
 .header {
     /* body를 기준으로 정렬
     position 값을 주면 (예외 relative) block요소라도
