@@ -191,7 +191,7 @@ button{
         /* 제목을 무조건 2줄로 제한 */
         line-height: 1.2;
         height: 2.4em; /* 행간 X 2(제한할 줄의 수만큼) 단위는 em */
-        overflow: hidden; /* 높이를 제한했기 때문에 벗어나는ㄴ 글자는 숨김 */
+        overflow: hidden; /* 높이를 제한했기 때문에 벗어나는 글자는 숨김 */
     }
     .notice ul li a span {
         font-size: 13px;
@@ -208,8 +208,133 @@ button{
         border-radius: 20px; /* 높이의 절반*/
         line-height: 35px; 
         /* 버튼은 line-height의 높이를 갖고 글자도 위아래 가운데 정렬함 */
-        padding: 0 30px;
+        padding: 0 23px;
         display: inline-block;
     }
-     
+} /* media */
+
+.news {
+    margin: 84px 0 0 0;
+}
+.news h2 {
+    font-size: 40px;
+    font-weight: 900;
+    color: #666;
+    margin-bottom: 40px;
+}
+.news h2 strong {
+    color: #1d1d1d;
+}
+
+.news ul {
+    display: flex;
+    justify-content: space-between;
+}
+.news ul li {
+    width: 299px;
+}
+/* a태그 안에 많은 요소들이 들어가면 dispay를 주는게 좋음 */
+.news ul li a {
+    display: block;
+}
+.news ul li a strong {
+    display: block;
+    /* 제목은 strong, 날짜는 span태그로 정의함 - 디자인상 줄바꿈이 필요함 
+    이떄 display:block; 각 요소가 block 요소로 변경되어 둘이 한줄에 나타나지 않음 */
+    font-size: 20px;
+    color: #1d1d1d;
+    margin: 14px 0;
+}
+.news ul li a span {
+    display: block;
+    font-size: 15px;
+    color: #3d3d3d;
+}
+.news .notice_wrap {
+    position: relative;
+    /* more 정렬의 기준 */
+}
+.news .more {
+    /* notice_wrap의 영역을 기준으로 */
+    position: absolute;
+    right: 0;
+    top: 55px;
+}
+.news .more a {
+    border: 1px solid #999;
+    border-radius: 25px; /* 높이의 절반*/
+    line-height: 51px; 
+    /* 버튼은 line-height의 높이를 갖고 글자도 위아래 가운데 정렬함 */
+    padding: 0 33px;
+    display: block;
+}
+/* a 태그에 마우스를 오버했을 때 */
+.news .more a:hover {
+    background-color: #999;
+    color: #fff;
+}
+@media screen and (max-width:640px){
+    .news {
+        margin: 50px 0 0 0;
+    }
+    .news h2 {
+        font-size: 25px;
+    }
+    .news h2 br {
+        display: none;
+        /* br 태그 숨김처리 하기 때문에 줄바꿈이 사라짐
+        br 태그는 여는 대그 닫는 대그가 없는 단독태그라 가능함*/
+    }
+    .news ul {
+        flex-wrap: wrap;
+        /* 한줄에 2개씩으로 변경
+        display:flex: 유지하고 flex:wrap:wrap 줄바꿈 허용
+        원래 flex는 한줄로 모든 요소를 배치하려는 성향이 있음*/
+    }
+    .news ul li {
+        width: calc(50% - 8px);
+        /* 한줄에 2개씩 사이에 여백을 두고 배치해야됨
+        넓이는 %이고 여백은 px이므로 계산하기 위해 calc()연산자 사용해야함
+        calc(100%/갯수 - 여백/갯수px) */
+        margin-bottom: 20px;
+    }
+    .news ul li img {
+        width: 100%;
+        /* 감싸는 요소의 넓이에 꽉차게 들어감
+        높이는 비율에 맞게 자동으로 조정*/
+    }
+    .news ul li a strong {
+        font-size: 13px;
+        margin: 8px 0;
+        /* 제목 2줄만 출력 */
+        line-height: 1.2;
+        height: 2.4em; /* 행간 X 주고싶은 줄수 단위는 em*/
+        overflow: hidden; /* 제한한 높이보다 콘텐츠가 길면 숨김 */
+    }
+    .news ul li a span {
+        font-size: 13px;
+    }
+    .news .notice_wrap {
+        position: relative;
+        /* more 정렬의 기준 */
+    }
+    .news .more {
+        /* absolute 해제하고 원래 코딩 순서대로 */
+        position: relative;
+        right: auto;
+        top: auto;
+        margin: 15px 0 50px 0;
+        text-align: center; 
+        /* 혹은 display:flex: 
+         justify-content: center; 가운데 정렬 */
+    }
+    .news .more a {
+        border: 1px solid #999;
+        border-radius: 20px; /* 높이의 절반*/
+        line-height: 35px; 
+        /* 버튼은 line-height의 높이를 갖고 글자도 위아래 가운데 정렬함 */
+        padding: 0 23px;
+        display: inline-block;
+    }
+
 } /* media */
