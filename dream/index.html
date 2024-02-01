@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>삼성꿈장학재단</title>
+</head>
+<body>
+    <div id="wrap">
+        <header class="header">
+            <div class="wrapper">
+                <!-- 로고는 기본은 흰색, header가 고정되었을때는 컬러로 변경
+                이미지 두개를 코딩해서 상황 따라 보이게 하는 것보다는
+                상황에 따라 이미지가 변경되면 background로 처리함
+                이때 로고를 background로 대체할 것이기 때문에 글자를 안써도 되지만
+                웹표준/웹접근성 위배이기 때문에 h1/a 택그는 빈 태그로 두면 안됨
+                글자가 있는 이미지를 background 처리할때 그 이미지에 있는 모든 텍스트를 html에 작성 -->
+                <h1 class="logo"><a href="index.html">삼성꿈장학재단</a></h1>
+                <div class="inner">
+                    <nav class="gnb">
+                        <!-- 버튼이 흰색.검은색 배경처리하고 대체텍스드를 써줌
+                        a 태그는 누르면 다른 페이지로 이동
+                        button태그는 누르면 기능이 작동(페이지 이동이 없음)-->
+                        <button class="gnb_open">메뉴열기</button>
+                        <ul>
+                            <li><a href="#n">사업소개</a></li>
+                            <li><a href="#n">장학신청</a></li>
+                            <li><a href="#n">정보마당</a></li>
+                            <li><a href="#n">재단소개</a></li>
+                        </ul>
+                    </nav>
+                    <a href="#n" class="login">로그인</a>
+                    <a href="#n" class="lang">영문홈페이지 이동</a>
+                </div>
+            </div><!--wrapper-->
+        </header>
+        <div class="container">
+            <section class="visual">
+                <div class="wrapper">
+                    <div class="inner">
+                        <h2>세상을 바꾸는 것은 사람<br>사람을 키우는 것은 <span>사랑과 관심입니다.</span></h2>
+                        <p>저마다의 꿈을 가진 아이들의 미래와 희망을 지키는 든든한 버팀목이 되도록 노력하겠습니다.</p>
+                    </div>
+                </div><!--wrapper-->
+            </section>
+            <section class="service">
+                <div class="wrapper"></div><!--wrapper-->
+            </section>
+            <section class="biz">
+                <div class="wrapper"></div><!--wrapper-->
+            </section>
+            <section class="news">
+                <div class="wrapper"></div><!--wrapper-->
+            </section>
+            <section class="webzine">
+                <div class="wrapper"></div><!--wrapper-->
+            </section>
+            <footer class="footer">
+                <div class="wrapper"></div><!--wrapper-->
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

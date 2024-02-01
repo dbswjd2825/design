@@ -1,3 +1,194 @@
 @charset "utf-8"; /*이 css 문서는 UTF-8 방식으로 인코딩되어 있습니다. */
 @import url(default.css);
+/* 본고딕 CDN 방식으로 사용할 때 폰트를 정의하는 font-face가 입력된 css를 
+inport 불러다가 사용하는 방식을 많이 사용함
+이 방식은 간단하지만 문제가 google이 서비스를 중단하면 사용 못함
+font 파일을 저장해서 사용하는 방식을 씀*/
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+html, body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;  /* 글자크기 */
+    color: #3D3D3D; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.4; /* auto */
+    word-break: keep-all;  /* 단어를 묶어서 줄바꿈 */
+    }   
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280PX; /* 홈페이지 넓이 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넒이가 작을때 가로스크롤바가 생성되는데
+    오른쪽에 background가 짤리는 현상이 생김
+    가로스크롤바가 생성되었을때도 정상적으로 서비스 하기 위해서 최소 넓이를 입력*/
+}
+
+/* 640px 이하일때 스타일*/
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px;  /* 글자크기 */
+        }   
+    .wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+        width: auto; 
+        /* 모바일에서는 홈페이지 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 구현되어야 하기 떄문에 */
+        margin: 0 20px; 
+        /* 안쪽으로 좌우 여백이 20px씩 들어가게 함 */
+    }
+    #wrap { /* id="wrap"에 적용되는 스타일 */
+        min-width: auto;
+        /* 최소 넓이 제한하지 않음*/
+    }
+} /* media*/
+
+.header {
+    /* body를 기준으로 정렬 */
+    position: absolute;
+    left: 0;
+    top: 0;
+    /* header를 맨위애 배치 - 다른 요소에 가려서 안보일 수 있기 때문 */
+    z-index: 100;
+    /*position: absolute; 는 넓이값이 안들어감 넓이 100%로 줘야함*/
+    width: 100%; 
+    height: 100PX;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.header .logo {
+    float: left;
+    margin-top: 21px;
+}
+.header .logo a {
+    width: 170px;
+    height: 57px;
+    display: block;
+    /* 배경의 로고 크기는 pc/모바일 버전에서 사이즈가 다름
+    물론 background-size를 width, height 로 수정 가능
+    하지만 a 태그에 준 넓이와 높이값에 맞게 background-size가 자동으로 조절되었으면 함
+    contain - 이미지를 짜르지 않고 영역에 딱 맞게 조절 
+    또는 100% auto - 가로는 영역 딱맞게 세로는 가로 비율에 맞게 */
+    background: url(../images/logo_w.svg) no-repeat center center / contain;
+    /* a 태그에 써준 글자를 안보이게 하는 방법 */
+    font-size: 0; 
+    line-height: 0;
+}
+.header .inner {
+    float: right;
+    display: flex;
+    /*  display: flex;는 좌우로 배치된 요소의 높이를 
+    제일 높은 높이와 동일하게 다른 요소들에게도 그 높이를 맞춤
+    원래 요소별 높이로 주고 싶으면 align-items를 줘야함 */
+    align-items: center;
+}
+/* 모바일에서 사용할 메뉴 열기 버튼 - pc버전에서는 숨김처리 */
+.header .gnb .gnb_open {
+    display: none; /* 태그를 지운것처럼 공간을 차지하지 않음 */
+}
+.header .gnb ul {
+    display: flex;
+}
+.header .gnb ul li a {
+    font-size: 22px;
+    font-weight: 700;
+    padding: 34px 24px;
+    display: block;
+}
+.header .login {
+    width: 30px;
+    height: 30px;
+    background: url(../images/icon_login_w.svg) no-repeat center center;
+    font-size: 0;
+    line-height: 0;
+    margin: 5px 10px 0px 65px;
+}
+.header .lang {
+    width: 30px;
+    height: 30px;
+    background: url(../images/icon_lang_w.svg) no-repeat center center;
+    font-size: 0;
+    line-height: 0;
+    margin: 5px 10px 0 0;
+}
+@media screen and (max-width:640px){
+    .header { 
+        height: 50PX;
+    }
+    .header .logo {
+        margin-top: 11px;
+    }
+    .header .logo a {
+        width: 81px;
+        height: 27px;
+    }
+    /* 모바일에서 사용할 메뉴 열기 버튼 - pc버전에서는 숨김처리, 모바일에서는 보이도록
+    display:none; 로 숨긴 요소는 none 제외하고 다른 무엇이든 입력하면 나타남 */
+    .header .gnb .gnb_open {
+        display: block; 
+        width: 24px;
+        height: 24px;
+        background: url(../images/gnb_open_w.svg) no-repeat center center;
+        font-size: 0;
+        line-height: 0;
+        margin-top: 13px;
+    }
+    .header .gnb ul {
+        display: none; /* 모바일에서 메뉴는 메뉴 열기 버튼을 클릭해야 나타남 */
+    }
+    .header .login {
+        display: none;
+    }
+    .header .lang {
+        display: none;
+    }
+} /*media*/
+
+.visual {
+    /* background 사이즈 조절
+     cover 영역에 이미지가 꽉차게 - 이미지 일부가 짤리고 배경은 꽉참 - 배경이미지
+     cotain 영역에 이미지가 꽉차게 - 이미지는 안짤리고 배경이 일부가 빔 - 배경에 로고가 들어간 경우*/
+    background: url(../images/visual_bg.png) no-repeat center center / cover;
+    color: #Fff;
+    text-align: center;
+}
+/* visual의 높이가 브라우저 높이에 따라서 바뀜 
+    그래서 h2태그가 위에서 부터의 여백이 그떄그때 달라짐 
+    > 고정값으로 줄 수가 없음
+    사이즈가 변경될때 가운데는 바뀌지 않음 
+    h2 태그는 원래 디자인 자체가 visual 영역에 위아래 가운데 디자인
+    코딩도 위아래 가운데를 기준으로 여백을 줘야함 */
+.visual .inner {
+    display: flex;
+    flex-direction: column; /* 세로배치*/
+    justify-content: center; /* 세로에서 가운데*/
+    height: 100vh; /* 브라우저 높이와 일정한 높이*/
+    min-height: 600px; /* 내부의 콘텐츠가 짤리지 않을 만큼의 최소 높이값 설정해야 함*/
+}
+.visual h2 {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+}
+.visual p {
+    font-size: 20px;
+    margin-top: 23px;
+}
+@media screen and (max-width:640px){
+    .visual .inner {
+        height: 400px;
+        min-height: auto; /* 높이값 줬다가 취소*/
+    }
+    .visual h2 {
+        font-size: 25px;
+        margin-top: 0px;
+    }
+    .visual h2 span {
+        display: block;
+    } /* 모바일에서만 줄바꿈 추가 */
+    .visual p {
+        display: none; /* 숨김 */
+    }
+} /* media */
+
