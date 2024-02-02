@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
+    <!-- jquery를 작동시키는 파일 -->
+    <script src="js/jquery-3.7.1.min.js"></script> 
+    <script src="js/main.js"></script>
     <title>삼성꿈장학재단</title>
 </head>
 <body>
     <div id="wrap">
+        <!--스크롤이 내렸을때 jquery에서 header한테 fixed라는 클래스를 줄 예정 -->
         <header class="header">
             <div class="wrapper">
                 <!-- 로고는 기본은 흰색, header가 고정되었을때는 컬러로 변경
@@ -45,7 +49,22 @@
                 </div><!--wrapper-->
             </section>
             <section class="service">
-                <div class="wrapper"></div><!--wrapper-->
+                <div class="wrapper">
+                    <!--section 태그안에는 qksemtl h2~h6 사이의 제목이 존재해야 함
+                    근데 디자인상 제목으로 볼 요소가 없으면
+                    제목을 써주고 css에서 숨김처리함 (웹접근성/웹표준) -->
+                    <h2>공모안내</h2>
+                    <!-- li의 순서가 변경되어도 디자인이 유지되어야 함
+                    각각의 li에 class명 주기 -->
+                    <ul>
+                        <li class="service01"><a href="#n">꿈장학</a></li>
+                        <li class="service02"><a href="#n">SOS장학</a></li>
+                        <li class="service03"><a href="#n">대학희망장학</a></li>
+                        <li class="service04"><a href="#n">배움터교육<br>지원사업</a></li>
+                        <li class="service05"><a href="#n">글로벌<br>장학사업</a></li>
+                        <li class="service06"><a href="#n">특별사업</a></li>
+                    </ul>
+                </div><!--wrapper-->
             </section>
             <section class="biz">
                 <div class="wrapper"></div><!--wrapper-->

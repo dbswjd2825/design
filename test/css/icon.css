@@ -1,0 +1,308 @@
+/* 태그초기화 - 태그의 기본 스타일 제거 */
+* { 
+    padding: 0; /* 모든 태그의 여백 삭제*/
+    margin: 0;
+    box-sizing: border-box; 
+    /* padding, border는 넓이를 늘리는 요소인데 넓이를 늘리지 않도록 하는 속성 */
+}
+/* 다중선택자 : 쉼표로 연결한 선택자 모두에게 동일한 스타일을 적용할때 사용 */
+ul, ol, li {
+    list-style: none; /* ul li 앞의 동그라미 삭제 */
+}
+a { /* a태그는 파란색의 underline이 기본적으로 생성됨 */
+    text-decoration: none; /* underline 제거 */
+    color: inherit; /* 색상은 파란색 말고 누군가가 상속해준 스타일을 받아 적용*/
+}
+address, em {
+    /* em태그와 address태그는 기본적으로 글자가 기울어짐
+    디자인상 기울어짐을 사용하기 위해서 쓰지 않음
+    최근 기울어짐 디자인을 하지 않음
+    그래서 태그에 있는 기본 기울어짐을 초기화 */
+    font-style: normal ;
+}
+/* 글자를 두껍게 하고 크기를 조정하는 태그 
+    - body가 선언한 속성대로 적용될 수 있도록 초기화
+    브라우저가 기본적으로 적용한 스타일 적용 X */
+h1, h2, h3, h4, h5, h6, strong {
+    font-size: inherit;
+    font-weight: inherit;
+}
+button{
+    background-color: transparent; /* 배경투명 */
+    border: 0; /* 테두리 삭제 */
+    color: inherit; /* 브라우저가 주는 값 삭제 */
+    font-family: inherit; /* button은 서체도 바뀜 - 상속 */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+
+html, body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 15px;  /* 글자크기 */
+    color: #3D3D3D; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.4; /* auto */
+    word-break: keep-all;  /* 단어를 묶어서 줄바꿈 */
+    }   
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280PX; /* 홈페이지 넓이 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 1280px;
+    /* PC형에서 wrapper사이즈보다 브라우저 넒이가 작을때 가로스크롤바가 생성되는데
+    오른쪽에 background가 짤리는 현상이 생김
+    가로스크롤바가 생성되었을때도 정상적으로 서비스 하기 위해서 최소 넓이를 입력*/
+}
+/* 640px 이하일때 스타일*/
+@media screen and (max-width:640px){
+    html, body {
+        font-size: 13px;  /* 글자크기 */
+        }   
+    .wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+        width: auto; 
+        /* 모바일에서는 홈페이지 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 구현되어야 하기 떄문에 */
+        margin: 0 20px; 
+        /* 안쪽으로 좌우 여백이 20px씩 들어가게 함 */
+    }
+    #wrap { /* id="wrap"에 적용되는 스타일 */
+        min-width: auto;
+        /* 최소 넓이 제한하지 않음*/
+    }
+} /* media*/
+
+h1{
+    font-size: 50px;
+    font-weight: 700;
+    margin: 20px;
+    color: #1d1d1d;
+}
+.tnb {
+    margin: 20px 0;
+}
+.tnb .inner{
+    display: flex;
+    align-items: center; /* 세로(위아래) 가운데*/
+}
+.tnb .login1, .tnb .lang1{
+    /* 글자를 없애고 아이콘만 나오는 코딩 */
+    width: 40px; /* 아이콘 사이즈 또는 a태그에 주고 싶은 크기 */
+    height: 40px;
+    font-size: 0; /*글자숨기기*/
+    line-height: 0;
+}
+.tnb .login1{
+    background: url(.././../dream/images/icon_login_b.svg) no-repeat center center;
+}
+.tnb .lang1{
+    background: url(.././../dream/images/icon_lang_b.svg) no-repeat center center;
+}
+@media screen and (max-width:640px){
+    .tnb .login1, .tnb .lang1{
+        /* 글자를 없애고 아이콘만 나오는 코딩 */
+        width: 20px; /* 아이콘 사이즈 또는 a태그에 주고 싶은 크기 */
+        height: 20px;
+        background-size: 14px auto;
+    }
+}/*media*/
+.tnb .login2,.tnb .lang2 {
+    /* 아이콘 왼쪽 글자가 오른쪽에 들어감
+    그럼 아이콘이 들어갈 자리를 padding으로 줌 
+    아이콘은 위치를 자유롭게 움직여야 해서 
+    before 가상 선택자에 position:absolute로 줌 */
+    padding-left: 32px;
+    color: #1d1d1d;
+    position: relative; /* before 선택자 정렬의 기준 */
+    margin: 0 10px;
+}
+.tnb .login2::before,.tnb .lang2::before {
+    position: absolute; /* a기준으로 정렬 */
+    left: 0;
+    top: -4px;
+    content: "";
+    width: 30px; /* 아이콘크기*/
+    height: 30px;
+}
+.tnb .login2::before{
+    background: url(.././../dream/images/icon_login_b.svg) no-repeat center center;
+}
+.tnb .lang2::before{
+    background: url(.././../dream/images/icon_lang_b.svg) no-repeat center center;
+}
+@media screen and (max-width:640px){
+    .tnb .login2,.tnb .lang2 {
+        padding-left: 20px; /*아이콘 사이즈가 줄어들면서 앞의 여백값도 바뀜*/
+        font-size: 11px;
+    }
+    .tnb .login2::before,.tnb .lang2::before {
+        top: 1px;
+        width: 14px; /* 아이콘크기*/
+        height: 14px;
+        background-size: 14px auto;
+    }
+}/*media*/
+.tnb .login3,.tnb .lang3 {
+    padding-top: 30px;
+    color: #1d1d1d;
+    margin: 0 10px;
+    position: relative; /* before 선택자 정렬의 기준 */
+}
+.tnb .login3::before,.tnb .lang3::before {
+    position: absolute;
+    /* before가 글자 가운데 정렬
+    left : calc(50% - before width의 반)*/
+    left: calc(50% - 15px);
+    top: 0;
+    content: "";
+    width: 30px; /* 아이콘크기*/
+    height: 30px;
+}
+.tnb .login3::before{
+    background: url(.././../dream/images/icon_login_b.svg) no-repeat center center;
+}
+.tnb .lang3::before{
+    background: url(.././../dream/images/icon_lang_b.svg) no-repeat center center;
+}
+@media screen and (max-width:640px){
+    .tnb .login3,.tnb .lang3 {
+        padding-top: 0;
+        font-size: 11px;
+    }
+    .tnb .login3::before,.tnb .lang3::before {
+        display: none;
+    }
+}/*media*/
+
+.service ul {
+    margin: 20px 0;
+}
+.service .st1 {
+    display: flex;
+}
+.service .st1 li {
+    width: 16.66%; /* 100/6 = 16.66%*/
+    text-align: center;
+}
+.service .st1 li a {
+    padding-top: 85px;
+    display: block;
+    position: relative; /* before 선택자 정렬의 중심 */
+}
+.service .st1 li a::before {
+    position: absolute;
+    left: calc(50% - 30px);
+    top: 0;
+    content: "";
+    width: 60px; /* 제일 큰 아이콘 사이즈 */
+    height: 60px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    /* background 라고 스타일을 주면 
+    repeat, position, size, image 모든 스타일을 선언하는 것임
+    이 떄문에 css까 충돌되는 경우가 발생
+    background를 각자 속성별로 선언하면 충돌을 막을 수 있음*/
+}
+.service .st1 li.se1 a::before {
+    background-image: url(../../dream/images/icon_service01.svg);
+}
+.service .st1 li.se2 a::before {
+    background-image: url(../../dream/images/icon_service02.svg);
+}
+.service .st1 li.se3 a::before {
+    background-image: url(../../dream/images/icon_service03.svg);
+}
+.service .st1 li.se4 a::before {
+    background-image: url(../../dream/images/icon_service04.svg);
+}
+.service .st1 li.se5 a::before {
+    background-image: url(../../dream/images/icon_service05.svg);
+}
+.service .st1 li.se6 a::before {
+    background-image: url(../../dream/images/icon_service06.svg);
+}
+@media screen and (max-width:640px){
+    .service .st1 {
+        flex-wrap: wrap; /* flex는 무조건 한줄에 배치 > 줄바꿈 허용 */
+        font-size: 11px;
+    }
+    .service .st1 li {
+        width: 33.33%; /* 100/3 = 33.33%*/
+        margin-bottom: 10px;
+    }
+    .service .st1 li a {
+        padding-top: 54px;
+    }
+    .service .st1 li a::before {
+        left: calc(50% - 22px);
+        width: 45px; /* 제일 큰 아이콘 사이즈 */
+        height: 45px;
+        background-size: auto 42px;
+    }
+    .service .st1 li.se1 a::before {
+        background-image: url(../../dream/images/icon_service01.svg);
+    }
+    .service .st1 li.se2 a::before {
+        background-image: url(../../dream/images/icon_service02.svg);
+    }
+    .service .st1 li.se3 a::before {
+        background-image: url(../../dream/images/icon_service03.svg);
+    }
+    .service .st1 li.se4 a::before {
+        background-image: url(../../dream/images/icon_service04.svg);
+    }
+    .service .st1 li.se5 a::before {
+        background-image: url(../../dream/images/icon_service05.svg);
+    }
+    .service .st1 li.se6 a::before {
+        background-image: url(../../dream/images/icon_service06.svg);
+    }
+}/*media*/
+
+.service .st2 {
+    display: flex;
+    justify-content: space-between;
+}
+.service .st2 li a {
+    width: 190px;
+    height: 104px;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    padding-top: 25px;
+}
+.service .st2 li a em {
+    padding-left: 65px; /* 아이콘이 들어갈 자리 */
+    display: block;
+    position: relative;
+}
+
+.service .st2 li a em::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 58px;
+    height: 58px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: auto 58px;
+}
+.service .st2 li.se1 a em::before {
+    background-image: url(../../dream/images/icon_service01.svg);
+}
+.service .st2 li.se2 a em::before {
+    background-image: url(../../dream/images/icon_service02.svg);
+}
+.service .st2 li.se3 a em::before {
+    background-image: url(../../dream/images/icon_service03.svg);
+}
+.service .st2 li.se4 a em::before {
+    background-image: url(../../dream/images/icon_service04.svg);
+}
+.service .st2 li.se5 a em::before {
+    background-image: url(../../dream/images/icon_service05.svg);
+}
+.service .st2 li.se6 a em::before {
+    background-image: url(../../dream/images/icon_service06.svg);
+}
