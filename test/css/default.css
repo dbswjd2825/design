@@ -30,6 +30,8 @@ h1, h2, h3, h4, h5, h6, strong {
 button{
     background-color: transparent; /* 배경투명 */
     border: 0; /* 테두리 삭제 */
+    font-size: inherit;
     color: inherit; /* 브라우저가 주는 값 삭제 */
     font-family: inherit; /* button은 서체도 바뀜 - 상속 */
+    cursor: pointer; /* button에 마우스를 올리면 손바닥 모양 */
 }
