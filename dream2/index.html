@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- jquery를 작동시키는 파일 -->
+    <script src="js/jquery-3.7.1.min.js"></script> 
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <title>삼성꿈장학재단-메뉴구현</title>
+</head>
+<body>
+    <div id="wrap">
+    <!-- 스크롤을 내리면 header가 고정 : fixed 클래스 추가
+        pc버전에서 메뉴에 마우스를 오버하면 : menu_over 클래스 추가 
+        모바일버전에서 메뉴를 열면 : menu_open 클래스 추가 -->
+        <header class="header">
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html">삼성꿈장학재단</a></h1>
+                <nav class="gnb">
+                    <button class="gnb_open">메뉴열기</button>
+                    <div class="gnb_wrap">
+                        <ul class="depth1">
+                        <!-- 1차 메뉴 a를 클릭하면 감싸는 요소 li한테 sub_open 클래스 추가 -->
+                            <li>
+                                <a href="https://www.naver.com/"><span>사업소개</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n">멘토링 꿈장학사업</a></li>
+                                    <li><a href="#n">리더육성 장학사업</a></li>
+                                    <li><a href="#n">리더육성 장학사업</a></li>
+                                    <li><a href="#n">글로벌 장학사업</a></li>
+                                    <li><a href="#n">특별사업</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://www.naver.com/"><span>장학신청</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n">멘토링 꿈장학사업</a></li>
+                                    <li><a href="#n">리더육성 장학사업</a></li>
+                                    <li><a href="#n">리더육성 장학사업</a></li>
+                                    <li><a href="#n">글로벌 장학사업</a></li>
+                                    <li><a href="#n">특별사업</a></li>
+                                </ul>
+                            </li>           
+                            <li>
+                                <a href="https://www.naver.com/"><span>정보마당</span></a>
+                                <ul class="depth2">  
+                                    <li><a href="#n">재단소식</a></li>
+                                    <li><a href="#n">정보마당</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="https://www.naver.com/"><span>재단소개</span></a>
+                                <ul class="depth2">
+                                    <li><a href="#n">재단소개</a></li>
+                                    <li><a href="#n">함께하는 사람들</a></li>
+                                    <li><a href="#n">찾아오시는 길</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <button class="gnb_close"></button>
+                </nav>
+                <div class="tnb"> <!-- top navigation bar -->
+                    <a href="#n" class="login">로그인</a>
+                    <a href="#n" class="lang">영문홈페이지 이동</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <section class="visual">
+                <div class="swiper"> 
+                    <ul class="swiper-wrapper"> 
+                        <li class="swiper-slide"><img src="images/visual_bg.png"></li>
+                        <li class="swiper-slide"><img src="images/visual1.png"></li>
+                        <li class="swiper-slide"><img src="images/visual2.png"></li>
+                        <li class="swiper-slide"><img src="images/visual3.png"></li>
+                        <li class="swiper-slide"><img src="images/visual4.png"></li>
+                        <li class="swiper-slide"><img src="images/visual5.png"></li>
+                    </ul>
+                </div>
+                <div class="inner">
+                    <h2>세상을 바꾸는 것은 사람<br>사람을 키우는 것은 <span>사랑과 관심입니다.</span></h2>
+                    <p>저마다의 꿈을 가진 아이들의 미래와 희망을 지키는 든든한 버팀목이 되도록 노력하겠습니다.</p>
+                </div>
+            </section>
+            <section class="service">
+                <div class="wrapper">
+                    <!--section 태그안에는 반드시 h2~h6 사이의 제목이 존재해야 함
+                    근데 디자인상 제목으로 볼 요소가 없으면
+                    제목을 써주고 css에서 숨김처리함 (웹접근성/웹표준) -->
+                    <h2>공모안내</h2>
+                    <!-- li의 순서가 변경되어도 디자인이 유지되어야 함
+                    각각의 li에 class명 주기 -->
+                    <ul>
+                        <li class="service01"><a href="#n">꿈장학</a></li>
+                        <li class="service02"><a href="#n">SOS장학</a></li>
+                        <li class="service03"><a href="#n">대학희망장학</a></li>
+                        <li class="service04"><a href="#n">배움터교육<br>지원사업</a></li>
+                        <li class="service05"><a href="#n">글로벌<br>장학사업</a></li>
+                        <li class="service06"><a href="#n">특별사업</a></li>
+                    </ul>
+                </div><!--wrapper-->
+            </section>
+            <section class="biz">
+                <div class="wrapper">
+                    <h2>Dream 장학사업</h2>
+                    <ul>
+                        <li class="biz_01">
+                            <a href="#n">
+                                <h3>멘토링 <br>꿈장학사업</h3>
+                                <p>다양한 분야에 꿈과 가능성이 있는 청소년들을 멘토와 함께 재능을 개발할 수있도록 장학금을 지원하는 사업</p>
+                                <span class="more">자세히 보기</span>
+                            </a>
+                        </li>
+                        <li class="biz_02">
+                            <a href="#n">
+                                <h3>리더육성 <br>장학사업</h3>
+                                <p>재단 출신 꿈장학생 중 우수한 대학(원)생을 선발하여, 장학금과 교육프로그램을 맞춤형으로 지원하는 사업 </p>
+                                <span class="more">자세히 보기</span>
+                            </a>
+                        </li>
+                        <li class="biz_03">
+                            <a href="#n">
+                                <h3>배움터 <br>교육지원사업</h3>
+                                <p>교육지원이 필요한 다양한 배움터들이 교육 프로그램을 운영하고 교육복지안전망을 구축하도록 지원하는 사업</p>
+                                <span class="more">자세히 보기</span>
+                            </a>
+                        </li>
+                        <li class="biz_04">
+                            <a href="#n">
+                                <h3>글로벌 <br>장학사업</h3>
+                                <p>한인후손과 개발도상국 아동·청소년의 교육을 지원하고, 개발도상국 출신 대학(원)생을 글로벌 리더로 양성하는 사업</p>
+                                <span class="more">자세히 보기</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--wrapper-->
+            </section>
+            <section class="news">
+                <div class="wrapper">
+                    <div class="inner"> <!-- 자세히보기 정렬의 기준 -->
+                        <h2>Dream 새소식</h2>
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <em>일반공지</em>
+                                    <strong>[공지] 삼성꿈장학재단 기부금 모집 결과</strong>
+                                    <span>2023-12-28</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <em>일반공지</em>
+                                    <strong>[공고] [입찰공고] 삼성꿈장학재단 홍보동영상 제작</strong>
+                                    <span>2023-11-13</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <em>장학공지</em>
+                                    <strong>[공모] 2024년 배움터 교육지원사업 공모</strong>
+                                    <span>2023-10-23</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <em>장학공지</em>
+                                    <strong>[공모] 2023년 글로벌 국외장학사업 공모</strong>
+                                    <span>2023-04-14</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <em>장학공지</em>
+                                    <strong>[공모] 2023년 멘토와 함께하는 꿈장학 공모</strong>
+                                    <span>2023-03-10</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="more"><a href="#n">자세히보기</a></div>
+                    </div>
+                </div><!--wrapper-->
+            </section>
+            <section class="webzine">
+                <div class="wrapper">
+                    <div class="inner">
+                        <div class="tit">
+                            <h2>Dream 웹진</h2>
+                            <strong>vol.94 - 2024.01</strong>
+                        </div>
+                        <ul>
+                            <li>
+                                <a href="#n">
+                                    <img src="images/webzine01.png" alt="">
+                                    <strong>2023 글로벌 희망장학 졸업식 및 송년모임</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <img src="images/webzine02.png" alt="">
+                                    <strong>꿈 빛 페인트로 색칠한 꿈아라들의 벽화봉사</strong>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#n">
+                                    <img src="images/webzine03.png" alt="">
+                                    <strong>2023년 한눈에 보는 장학사업</strong>
+                                </a>
+                            </li>
+                        </ul>    
+                        <div class="more"><a href="#n">자세히보기</a></div>
+                    </div>
+                </div><!--wrapper-->
+            </section>
+            <footer class="footer"> 
+                <!-- footer 선이 밖에 페이지까지 차지한다면 wrapper가 footer_top 등 요소의 안쪽에 있어야됨 -->
+                <div class="wrapper">
+                    <div class="footer_top">
+                        <div class="footer_logo"><img src="images/footer_logo.svg" alt="삼성꿈장학재단 로고"></div>
+                        <div class="footer_nav">
+                            <ul>
+                                <li><a href="#n">이용약관</a></li>
+                                <li><a href="#n">이메일 무단 수집거부</a></li>
+                                <li class="privacy"><a href="#n">개인정보처리방침</a></li>
+                                <li><a href="#n">교육부 홈페이지</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer_btm">
+                        <div class="footer_info">
+                            <address><strong>ADDRESS :</strong> (우)04323 서울특별시 용산구 후암로 107 게이트웨이타워 20층</address>
+                            <span><strong>TEL :</strong> 02-727-5400 </span>
+                            <span><strong>FAX :</strong> 02-727-5409</span>
+                        </div>
+                        <div class="footer_copyright">Copyright ⓒ Samsung Dream Scholarship Foundation</div>
+                    </div>
+                    <a href="#n" class="top">TOP</a>
+                </div><!--wrapper-->
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
