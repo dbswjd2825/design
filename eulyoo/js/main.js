@@ -61,5 +61,16 @@ $(document).ready(function(){
 		$(window).scroll(function(){ //함수의 실행 - 스크롤할때마다
 			scroll_chk()
 		})
+
+		/* 을유 을터뷰에서 하나의 li의 active가 이미 있는 상태
+		마우스를 오버하면 오버한 li에 active 클래스 추가
+		(기존의 오버했던 li의 active 클래스는 삭제)
+		이전에 오버했던 li를 계산하는 것보다(어려움)
+		모든 li의 active를 지워버림 그리고 오버한 li에게만 다시 active클래스를 줌 */
+		$('.interview .list ul li').on('mouseenter', function(){
+			$('.interview .list ul li').removeClass('active')
+			$(this).addClass('active')
+		})
+		
 })
 

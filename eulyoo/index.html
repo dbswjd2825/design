@@ -146,7 +146,7 @@
                         </ul>
                     </div>
                     <div class="more">
-                        <a href="#n">전체보기</a>
+                        <a href="#n">더보기</a>
                     </div>
                 </div>
             </div>
@@ -161,7 +161,10 @@
                     <!--무조건 하나가 over 상태의 디자인을 유지
                     마우스를 오버하면 오버 대상이 변경
                     마우스를 아웃하면 마지막에 마우스를 올렸던 대상이 오버 디자인 유지
-                    아를 구현하기 위해 class 추가-->
+                    아를 구현하기 위해 active class 추가
+                    처음에는 하나의 li의 active 클래스가 들어가 있는 상태이고
+                    다른 요소에 마우스를 오버하면 해당 li에만 active 클래스가 들어감
+                    (기존 li의 active 클래스는 삭제)-->
                     <ul>
                         <li>
                             <a href="#n">
@@ -173,7 +176,7 @@
                                 </div>
                             </a>
                         </li>
-                        <li>
+                        <li class="active"> <!-- 처음부터 오버상태 -->
                             <a href="#n">
                                 <div class="photo"><img src="images/interview02.png" alt="작가 김필영 사진"></div>
                                 <div class="cnt">

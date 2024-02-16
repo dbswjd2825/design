@@ -604,9 +604,16 @@ html, body {
 .interview .list ul {
     display: flex;
     justify-content: space-between;
+    align-items: flex-start;
+    /* 두번째 lid에 상단여백을 줘서 내림
+    모든 li의 길이가 늘어남
+    두번째 li 상단여백 + li 길이만큼 늘어남
+    원래 li 길이만큼 나타내려면 
+    반드시 align-items 속성을 줘야함(어떤 값이든 상관없음) */
 }
 .interview .list ul li {
     width: 408px;
+    position: relative; /* cnt 정렬의 기준 */
 }
 .interview .list ul li a {
     display: block;
@@ -628,4 +635,92 @@ html, body {
 }
 .interview .list ul li a .photo img {
     filter: grayscale(100%); /* 흑백 */
+    transition: 0.5s; /* 변경사항있을때 천천히 변경 (오버)*/
 }
+.interview .list ul li a .cnt {
+    position: absolute; /* li가 정렬의 기준 */
+    left: 30px;
+    bottom: 40px;
+    width: calc(100% - 60px); /* 양쪽 여백 30px씩 or padding으로 여백 위치 줘도 됨 */
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.interview .list ul li a .cnt h3 {
+    font-size: 20px;
+    font-weight: 700;
+}
+.interview .list ul li a .cnt p {
+    display: none;
+}
+.interview .list ul li a .cnt span {
+    font-size: 0;
+    line-height: 0;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 30px auto;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0625 15.9374H6.875V14.0625H14.0625V6.875H15.9374V14.0625H23.1249V15.9374H15.9374V23.1249H14.0625V15.9374Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+/* 오버되었을때*/
+.interview .list ul li.active a .photo {
+    box-shadow: 5px 5px 5px rgba(0,0,0, 0.1);
+}
+.interview .list ul li.active a .photo img {
+    filter: grayscale(0); /* 컬러 - 숫자 0은 단위 없음 */
+}
+.interview .list ul li.active a .cnt {
+    left: 0%;
+    bottom: -100px;
+    width: 327px; /* 양쪽 여백 30px씩 or padding으로 여백 위치 줘도 됨 */
+    height: 198px;
+    color: #fff;
+    display: block; /*flex 해제*/
+    padding: 30px 30px 0 30px; 
+    background-color: #50362F;
+    border-radius: 0 30px 0 30px;
+    box-shadow: 5px 5px 5px rgba(0,0,0, 0.1);
+}
+.interview .list ul li:nth-child(2).active a .cnt h3 {
+    border-radius: 30px 0 30px 0;
+}
+.interview .list ul li.active a .cnt p {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(255,255,255, 0.8);
+    display: block;
+    margin: 15px 0 25px 0;
+    /* 콘텐츠르르 3줄로 제한 */
+    line-height: 1.3;
+    height: 3.9em; /* 행간*줄수 em*/
+    overflow: hidden;
+}
+.interview .list ul li.active a .cnt span {
+    font-size: 15px;
+    line-height: 1.3;
+    width: auto;
+    height: auto;
+    background: none; /* 배경삭제 */
+    color: rgba(255,255,255, 0.6);
+    display: block; /* width : 100%*/
+    text-align: right;
+    position: relative; /* before 정렬 기준*/
+}
+.interview .list ul li.active a .cnt span::before {
+    position: absolute; /*span을 기준으로 정렬*/
+    left: 0;
+    top: 10px;
+    width: calc(100% - 6em);
+    /* 6em이라는 단위는 글자 6글자의 넓이 
+    반응형에서 글자의 크기가 변경되면
+    px로 한경우 계속 글자가 바뀔때마다 넓이를 변경해야 함
+    em이라는 단위를 사용하면 글자 크기가 줄어도 변경을 안해도 됨
+    글자의 크기에 따라 상태크기로 글자수 넓이를 줌 */
+    height: 1px;
+    background-color: rgba(255,255,255, 0.2);
+    content: "";
+}
+
+.footer {height: 1000px;}
