@@ -1,5 +1,20 @@
 $(document).ready(function(){
 
+	let device_staus
+	let window_w
+	function device_chk(){
+		window_w = $(window).width()
+		if(window_w > 640){ //pc
+			device_staus = 'pc'
+		}else{ //모바일
+			device_staus = 'mobile'
+		}
+		console.log(device_staus)
+	}
+	device_chk() /* html 로딩 후 1번 */
+	$(window).resize(function(){
+		device_chk() /* 브라우저가 리사이즈 될때마다 한번씩 */
+	}) 
     //visual의 팝업을 작동시키는 라이브러리
     const swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
@@ -71,6 +86,45 @@ $(document).ready(function(){
 			$('.interview .list ul li').removeClass('active')
 			$(this).addClass('active')
 		})
+
+			
+		/* pc버전에서 메뉴에 마우스를 오버하면 header에 menu_over 클래스 추가
+		tab버튼으로 메뉴 이동이 가능해야함 */
 		
+		$('.header .gnb').on('mouseenter focusin', function(){
+			$('.header').addClass('menu_over')
+		})
+		$('.header').on('mouseleave', function(){
+			$('.header').removeClass('menu_over')
+		})
+		/* 메뉴 다음 버튼이 포커스가 되면 메뉴를 아웃 시킴 */
+		$('.header .tnb .login').on('focusin', function(){
+			$('.header').removeClass('menu_over')
+		})
+
+		/* 모바일 메뉴
+		 .header .gnb .gnb_open을 클릭하면 메뉴가 열림
+			: header에 menu_open 클래스 추가
+    	.header .gnb .gnb_close를 클릭하면 메뉴가 닫힘
+			: header에 menu_open 클래스 삭제
+		1차 메뉴를 클릭하면 하위메뉴 열림
+			: 해당 li에  sub_open 클래스 추가
+			  이미 열린 메뉴를 다시 클릭하면 닫힘
+			  1차메뉴 클릭(href)을 무력화(안눌리게, 이동안하게)
+		 */
+
+		$('.header .gnb .gnb_open').on('click', function(){
+			$('.header').addClass('menu_open')
+		})
+		$('.header .gnb .gnb_close').on('click', function(){
+			$('.header').removeClass('menu_open')
+		})
+
+		$('.header .gnb ul.depth1 > li > a').on('click', function(e){
+			if(device_staus=='mobile'){ //모바일일때만 실행
+			e.preventDefault(); //href 링크를 없앰
+			$(this).parent().toggleClass('sub_open')
+			}
+		})
 })
 
