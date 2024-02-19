@@ -49,7 +49,7 @@ html, body {
     /* PC형에서 wrapper사이즈보다 브라우저 넒이가 작을때 가로스크롤바가 생성되는데
     오른쪽에 background가 짤리는 현상이 생김
     가로스크롤바가 생성되었을때도 정상적으로 서비스 하기 위해서 최소 넓이를 입력*/
-    overflow: hidden; 
+    /* overflow: hidden;  */
     /* wrap 영역 밖으로 나가는 콘텐츠를 숨김 (book의 list 영역이 넘어가서 가로스크롤바 생김 해제)*/
 }
 
@@ -584,6 +584,10 @@ html, body {
 .interview {
     background-color: rgba(234,229,225,0.4);
     margin-top: 140px;
+    padding-bottom: 240px; /* 뒷배경색 밑에 여백 */ 
+}
+.interview .wrapper {
+    position: relative; /* more 정렬의 기준 */
 }
 .interview .tit {
     padding-top: 80px;
@@ -639,9 +643,10 @@ html, body {
 }
 .interview .list ul li a .cnt {
     position: absolute; /* li가 정렬의 기준 */
-    left: 30px;
-    bottom: 40px;
-    width: calc(100% - 60px); /* 양쪽 여백 30px씩 or padding으로 여백 위치 줘도 됨 */
+    left: 0;
+    bottom: 0;
+    width: 100%; /*  width: calc(100% - 60px); 양쪽 여백 30px씩 or padding으로 여백 위치 줘도 됨 */
+    padding: 0 30px 25px 30px;
     color: #fff;
     display: flex;
     justify-content: space-between;
@@ -664,63 +669,283 @@ html, body {
     background-size: 30px auto;
     background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.0625 15.9374H6.875V14.0625H14.0625V6.875H15.9374V14.0625H23.1249V15.9374H15.9374V23.1249H14.0625V15.9374Z' fill='%23fff'/%3E%3C/svg%3E%0A");
 }
-/* 오버되었을때*/
-.interview .list ul li.active a .photo {
-    box-shadow: 5px 5px 5px rgba(0,0,0, 0.1);
+/* li에 active 들어갈때 스타일이 바뀌는건 pc에서만 적용되는 스타일
+모바일에서는 기본 스타일만 존재함
+미디어쿼리 min-width:641px 로 스타일 선언
+- 브라우저사이즈가 641px이상일때만 해당 스타일 적용함 */
+@media screen and (min-width:641px){ 
+    /* 오버되었을때*/
+    .interview .list ul li.active a .photo {
+        box-shadow: 5px 5px 5px rgba(0,0,0, 0.1);
+    }
+    .interview .list ul li.active a .photo img {
+        filter: grayscale(0); /* 컬러 - 숫자 0은 단위 없음 */
+    }
+    .interview .list ul li.active a .cnt {
+        left: 0%;
+        bottom: -100px;
+        width: 100%; /* 양쪽 여백 30px씩 or padding으로 여백 위치 줘도 됨 */
+        padding: 30px 30px 0 30px;
+        height: 198px;
+        color: #fff;
+        display: block; /*flex 해제*/
+        background-color: #50362F;
+        border-radius: 0 30px 0 30px;
+        box-shadow: 5px 5px 5px rgba(0,0,0, 0.1);
+    }
+    .interview .list ul li:nth-child(2).active a .cnt h3 {
+        border-radius: 30px 0 30px 0;
+    }
+    .interview .list ul li.active a .cnt p {
+        font-size: 15px;
+        font-weight: 400;
+        color: rgba(255,255,255, 0.8);
+        display: block;
+        margin: 15px 0 25px 0;
+        /* 콘텐츠를 3줄로 제한 */
+        line-height: 1.3;
+        height: 3.9em; /* 행간*줄수 em*/
+        overflow: hidden;
+    }
+    .interview .list ul li.active a .cnt span {
+        font-size: 15px;
+        line-height: 1.3;
+        width: auto;
+        height: auto;
+        background: none; /* 배경삭제 */
+        color: rgba(255,255,255, 0.6);
+        display: block; /* width : 100%*/
+        text-align: right;
+        position: relative; /* before 정렬 기준*/
+    }
+    .interview .list ul li.active a .cnt span::before {
+        position: absolute; /*span을 기준으로 정렬*/
+        left: 0;
+        top: 10px;
+        width: calc(100% - 6em);
+        /* 6em이라는 단위는 글자 6글자의 넓이 
+        반응형에서 글자의 크기가 변경되면
+        px로 한경우 계속 글자가 바뀔때마다 넓이를 변경해야 함
+        em이라는 단위를 사용하면 글자 크기가 줄어도 변경을 안해도 됨
+        글자의 크기에 따라 상태크기로 글자수 넓이를 줌 */
+        height: 1px;
+        background-color: rgba(255,255,255, 0.2);
+        content: "";
+    }
+} /* media */ 
+.interview  .more {
+    position: absolute;
+    top: 122px;
+    right: 0;
 }
-.interview .list ul li.active a .photo img {
-    filter: grayscale(0); /* 컬러 - 숫자 0은 단위 없음 */
-}
-.interview .list ul li.active a .cnt {
-    left: 0%;
-    bottom: -100px;
-    width: 327px; /* 양쪽 여백 30px씩 or padding으로 여백 위치 줘도 됨 */
-    height: 198px;
-    color: #fff;
-    display: block; /*flex 해제*/
-    padding: 30px 30px 0 30px; 
-    background-color: #50362F;
-    border-radius: 0 30px 0 30px;
-    box-shadow: 5px 5px 5px rgba(0,0,0, 0.1);
-}
-.interview .list ul li:nth-child(2).active a .cnt h3 {
-    border-radius: 30px 0 30px 0;
-}
-.interview .list ul li.active a .cnt p {
-    font-size: 15px;
-    font-weight: 400;
-    color: rgba(255,255,255, 0.8);
+.interview .more a {
+    width: 133px;
+    line-height: 37px;
+    border: 1px solid #3d3d3d;
     display: block;
-    margin: 15px 0 25px 0;
-    /* 콘텐츠르르 3줄로 제한 */
-    line-height: 1.3;
-    height: 3.9em; /* 행간*줄수 em*/
-    overflow: hidden;
+    padding-left: 20px;
+    position: relative; /* after기준의 정렬 */
+    transition: 0.5s;
 }
-.interview .list ul li.active a .cnt span {
-    font-size: 15px;
-    line-height: 1.3;
-    width: auto;
-    height: auto;
-    background: none; /* 배경삭제 */
-    color: rgba(255,255,255, 0.6);
-    display: block; /* width : 100%*/
-    text-align: right;
-    position: relative; /* before 정렬 기준*/
-}
-.interview .list ul li.active a .cnt span::before {
-    position: absolute; /*span을 기준으로 정렬*/
-    left: 0;
-    top: 10px;
-    width: calc(100% - 6em);
-    /* 6em이라는 단위는 글자 6글자의 넓이 
-    반응형에서 글자의 크기가 변경되면
-    px로 한경우 계속 글자가 바뀔때마다 넓이를 변경해야 함
-    em이라는 단위를 사용하면 글자 크기가 줄어도 변경을 안해도 됨
-    글자의 크기에 따라 상태크기로 글자수 넓이를 줌 */
-    height: 1px;
-    background-color: rgba(255,255,255, 0.2);
+.interview .more a::after {
+    position: absolute; /* a를 기준으로 정렬*/
+    right: 15PX;
+    top: 14px;
+    width: 20px;
+    height: 7px;
     content: "";
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='8' viewBox='0 0 20 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='-0.5' x2='19.4278' y2='-0.5' transform='matrix(1 0 0 -1 0 6.87598)' stroke='%233D3D3D'/%3E%3Cline y1='-0.5' x2='9.8995' y2='-0.5' transform='matrix(-0.707107 -0.707107 -0.707107 0.707107 19 8)' stroke='%233D3D3D'/%3E%3C/svg%3E%0A");
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: 20px auto;
+    transition: 0.5s;
+}
+.interview  .more a:hover {
+    background-color: #634D42;
+    border: 1px solid #634D42;
+    color: #fff;
+}
+.interview .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='8' viewBox='0 0 20 8' xmlns='http://www.w3.org/2000/svg'%3E%3Cline y1='-0.5' x2='19.4278' y2='-0.5' transform='matrix(1 0 0 -1 0 6.87598)' stroke='%23fff'/%3E%3Cline y1='-0.5' x2='9.8995' y2='-0.5' transform='matrix(-0.707107 -0.707107 -0.707107 0.707107 19 8)' stroke='%23fff'/%3E%3C/svg%3E%0A");
+    animation-name:more_animate; 
+    animation-duration:2s; 
+    animation-iteration-count:infinite; 
+    animation-timing-function:linear
+}
+@media screen and (max-width:640px){ 
+    .interview {
+        margin-top: 50px;
+        padding-bottom: 50px; /* 뒷배경색 밑에 여백 */ 
+    }
+    .interview .tit {
+        padding-top: 40px;
+    }
+    .interview .tit h2 {
+        font-size: 25px;
+        margin-bottom: 5px;
+    }
+    .interview .tit {
+        color: #2d2d2d;
+    }
+    .interview .list {
+        margin-top: 25px;
+    }
+    .interview .list ul li {
+        width: auto;
+    }
+    .interview .list ul li:nth-child(2),
+    .interview .list ul li:nth-child(3) {
+        display: none;
+    }
+    .interview .list ul li a .photo {
+        border-radius: 30px 0 30px 0; 
+        overflow: hidden; 
+    }
+    .interview .list ul li a .photo img {
+        filter: grayscale(0%); /* 컬러 */
+        width: 100%; /* 감싸는 영역의 넓이에 꼭 맞게 사이즈 조정 */
+    }
+    .interview .list ul li a .cnt {
+        bottom: 0;
+        padding: 20px 7% 0 7%;
+        display: block;
+        background-color: #50362F;
+        border-radius: 30px 0 30px 0;
+        height: 140px;
+    }
+    .interview .list ul li a .cnt h3 {
+        font-size: 15px;
+    }
+    .interview .list ul li a .cnt p {
+        display: block;
+        margin: 10px 0 10px 0;
+        /* 줄수제한*/
+        line-height: 1.3;
+        height: 3.9em;
+        overflow: hidden;
+    }
+    .interview .list ul li a .cnt span {
+        font-size: 11px;
+        line-height: 1.2;
+        width: auto;
+        height: auto;
+        background: none;
+        position: relative; /* before태그 정렬 기준 */
+        display: block;
+        text-align: right;
+    }
+    .interview .list ul li a .cnt span::before{
+        position: absolute;
+        left: 0;
+        top: 6px;
+        width: calc(100% - 6em);
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.2);
+        content: "";
+    }
+    /* 오버되었을때*/
+    .interview .list ul li.active a .photo {
+        box-shadow: 5px 5px 5px rgba(0,0,0, 0.1);
+    }
+    .interview .list ul li.active a .photo img {
+        filter: grayscale(0); /* 컬러 - 숫자 0은 단위 없음 */
+    }
+    .interview .list ul li.active a .cnt {
+        left: 0%;
+        bottom: 0;
+        width: 100%; /* 양쪽 여백 30px씩 or padding으로 여백 위치 줘도 됨 */
+        padding: 0 30px 0 30px;
+        height: 198px;
+        color: #fff;
+        display: block; /*flex 해제*/
+        padding: 30px 30px 0 30px; 
+        background-color: #50362F;
+        border-radius: 0 30px 0 30px;
+        box-shadow: 5px 5px 5px rgba(0,0,0, 0.1);
+    }
+    .interview .list ul li:nth-child(2).active a .cnt h3 {
+        border-radius: 30px 0 30px 0;
+    }
+    .interview .list ul li.active a .cnt p {
+        font-size: 15px;
+        font-weight: 400;
+        color: rgba(255,255,255, 0.8);
+        display: block;
+        margin: 15px 0 25px 0;
+        /* 콘텐츠르르 3줄로 제한 */
+        line-height: 1.3;
+        height: 3.9em; /* 행간*줄수 em*/
+        overflow: hidden;
+    }
+    .interview .list ul li.active a .cnt span {
+        font-size: 15px;
+        line-height: 1.3;
+        width: auto;
+        height: auto;
+        background: none; /* 배경삭제 */
+        color: rgba(255,255,255, 0.6);
+        display: block; /* width : 100%*/
+        text-align: right;
+        position: relative; /* before 정렬 기준*/
+    }
+    .interview .list ul li.active a .cnt span::before {
+        position: absolute; /*span을 기준으로 정렬*/
+        left: 0;
+        top: 10px;
+        width: calc(100% - 6em);
+        /* 6em이라는 단위는 글자 6글자의 넓이 
+        반응형에서 글자의 크기가 변경되면
+        px로 한경우 계속 글자가 바뀔때마다 넓이를 변경해야 함
+        em이라는 단위를 사용하면 글자 크기가 줄어도 변경을 안해도 됨
+        글자의 크기에 따라 상태크기로 글자수 넓이를 줌 */
+        height: 1px;
+        background-color: rgba(255,255,255, 0.2);
+        content: "";
+    }
+    .interview .more {
+        position: relative;
+        left: auto;
+        top: auto;
+        text-align: right;
+        margin-top: 20px;
+    }
+    .interview .more a {
+        display: inline-block;
+        width: 97px;
+        line-height: 26px;
+        padding: 0 35px 0 0; 
+    }
+    .interview .more a::after {
+        right: 10px;
+        top: 10px;
+        width: 16px;
+        height: 5px;
+        background-size: 16px auto;
+    }
+} /* media*/
+
+.news {
+    background: url(../images/news_bg.png) no-repeat center center / cover;
+    color: #fff;
+}
+.news .tit {
+
+}
+.news .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+    margin: 0 0 15px 0;
+}
+.news .list {
+    margin: 0 0 0 380px;
+}
+.news .list ul {
+    display: flex;
+    flex-wrap: wrap; /* 여러줄 가능*/
+    justify-content: space-between;
+}
+.news .list ul li {
+    width: 408px;
 }
 
 .footer {height: 1000px;}
