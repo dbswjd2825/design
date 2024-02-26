@@ -68,6 +68,10 @@ $(document).ready(function(){
     const adopt_swiper = new Swiper('.adopt .swiper', { /* 팝업을 감싼는 요소의 class명 */
 	slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
 	spaceBetween: 0, /* 팝업과 팝업 사이 여백 */
+    autoplay: {  /* 팝업 자동 실행 */
+             delay: 2500,
+             disableOnInteraction: true,
+        },
     loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 	breakpoints: {
 
@@ -153,6 +157,5 @@ $(document).ready(function(){
             $(this).parent().find('ul.depth2').slideDown()
         }
     });
-
 
 }) /*$(document).ready */
