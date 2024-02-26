@@ -15,7 +15,7 @@
 <body>
     <div id="wrap">
         <!--메뉴에 마우스를 올리면 header에 menu_over 클래스를 추가 -->
-        <header class="header">
+        <header class="header ">
             <h1 class="logo"><a href="index.html">동물보호센터</a></h1>
             <nav class="gnb">
                 <button class="gnb_open">메뉴열기</button>
@@ -23,17 +23,17 @@
                     <ul class="depth1">
                         <!--메뉴에 마우스를 올리면 sub_over-->
                         <li>
-                            <a href="#n">찾습니다</a>
+                            <a href="#n"><span>찾습니다</span></a>
                             <ul class ="depth2">
                                 <li><a href="#n">분실신고</a></li>
                                 <li><a href="#n">구조정보·목격담</a></li>
                             </ul>
                         </li>
-                        <li><a href="#n">구조분양</a></li>
-                        <li><a href="#n">네트워크</a></li>
-                        <li><a href="#n">재회성공담</a></li>
+                        <li><a href="#n"><span>구조분양</span></a></li>
+                        <li><a href="#n"><span>네트워크</span></a></li>
+                        <li><a href="#n"><span>재회성공담</span></a></li>
                         <li>
-                            <a href="#n">대처방법</a>
+                            <a href="#n"><span>대처방법</span></a>
                             <ul class ="depth2">
                                 <li><a href="#n">실종시 대처방법</a></li>
                                 <li><a href="#n">구조시 대처방법</a></li>
@@ -43,7 +43,7 @@
 
                     </ul>
                 </div>
-                <button class="gnb_close"></button>
+                <button class="gnb_close">메뉴닫기</button>
             </nav>
 
             <div class="tnb">
@@ -296,10 +296,10 @@
                 <div class="inner">
                     <div class="sns">
                         <ul>
-                            <li><a href="https://www.facebook.com/angel.or.kr/" target="_blank" title="새창링크">페이스북</a></li>
-                            <li><a href="https://twitter.com/bohocenter" target="_blank" title="새창링크">트위터</a></li>
-                            <li><a href="https://cafe.naver.com/forangels" target="_blank" title="새창링크">네이버</a></li>
-                            <li><a href="https://cafe.naver.com/forangels" target="_blank" title="새창링크">다음</a></li>
+                            <li class="facebook"><a href="https://www.facebook.com/angel.or.kr/" target="_blank" title="새창링크">페이스북</a></li>
+                            <li class="twitter"><a href="https://twitter.com/bohocenter" target="_blank" title="새창링크">트위터</a></li>
+                            <li class="naver"><a href="https://cafe.naver.com/forangels" target="_blank" title="새창링크">네이버</a></li>
+                            <li class="daum"><a href="https://cafe.daum.net/forangels" target="_blank" title="새창링크">다음</a></li>
                         </ul>
                     </div>
                     <div class="footer_nav">
@@ -320,11 +320,13 @@
                         <!-- 버튼의 기능이 여는 기능인데 관련사이트 열기라고 써줄수 없다면
                         title 속성으로 부가설명을 써줘야함 -->
                         <button class="site_open" title="열기">관련사이트</button>
+                        <div class="site_list">
                             <ul>
                                 <li><a href="https://www.animal.go.kr/front/awtis/public/publicList.do?menuNo=1000000055" target="_blank" title="새창링크">전국 공고내역</a></li>
                                 <li><a href="https://www.animal.go.kr/front/awtis/institution/institutionList.do?menuNo=1000000059" target="_blank" title="새창링크">지역별 동물보호센터연락처</a></li>
                                 <li><a href="https://www.animal.go.kr/front/awtis/relevant/relevantList.do?menuNo=5000000014" target="_blank" title="새창링크">지역별 동물보호 업무 부서</a></li>
                             </ul>
+                        </div>
                         <button class="site_close" title="닫기">관련사이트</button>
                     </div>
                     <div class="copyright">Copytigth© 동물보호센터 All Rights Reserved.</div>
