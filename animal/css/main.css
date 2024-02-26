@@ -925,9 +925,24 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         height: 10px;
     }
 }
+.msg .slogan {
+    position: absolute;
+    left: calc(50% - 90px);
+    top: -180px;
+    z-index: 10;
+    animation: slogan_rotate; 
+    animation-duration:10s; 
+    animation-timing-function:linear; 
+    animation-iteration-count:infinite;
+}
+@keyframes slogan_rotate {
+    0% { transform:translate(0) }
+    100% { transform:translate(-360deg) } 
+    }
 .msg {
     margin: 80px 0 100px;
     text-align: center;
+    position: relative;
 }
 .msg h2 {
     display: none;
