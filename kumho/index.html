@@ -2,17 +2,101 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" type="image/svg" href="favicon.svg">  
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.7.1.min.js"></script> 
-    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
     <title>금호건설</title>
 </head>
 <body>
-    <P>
-    </P>
-    <p>
+    <div class="skipnav">
 
-    </p>
+    </div>
+    <div id="wrap" class="main">
+        <!-- 메뉴가 상단 고정 : fixed
+                pc버전에서 메뉴 오버 : menu_over
+                모바일버전에서 메뉴를 클릭하면 열림 : menu_open -->
+        <header class="header"> 
+            <h1 class="logo"><a href="#n">금호건설</a></h1>
+            <nav class="gnb">
+                <button class="gnb_open">메뉴열기</button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <!-- 현재 선택된 메뉴에는 on 클래스 추가 -->
+                        <li>
+                            <!-- 1차메뉴를 클릭하면 1번째 하위메뉴로 이동 -->
+                            <a href="contents/about.html"><span>회사소개</span></a>
+                            <ul class="depth2">
+                                <!-- 2차메뉴에 마우스를 오버하거나 on클래스가 추가된 스타일 동일하게 적용-->
+                                <li><a href="contents/about.html">기업정보</a></li>
+                                <li><a href="contents/greeting.html">CEO인사말</a></li>
+                                <li><a href="contents/history.html">연혁</a></li>
+                                <li><a href="contents/org.html">조직도</a></li>
+                                <li><a href="contents/labInfo.html">기술혁신</a></li>
+                                <li><a href="contents/location.html">찾아오시는길</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contents/esg01.html"><span>ESG</span></a>
+                            <ul class="depth2">
+                                <li><a href="contents/esg01.html">윤리경영</a></li>
+                                <li><a href="contents/esg02.html">품질경영</a></li>
+                                <li><a href="contents/esg03.html">안전경영</a></li>
+                                <li><a href="contents/esg04.html">환경경영</a></li>
+                                <li><a href="contents/esg05.html">상생경영</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contents/biz01.html"><span>사업분야</span></a>
+                            <ul class="depth2">
+                                <li><a href="contents/biz01.html">건축사업</a></li>
+                                <li><a href="contents/biz02.html">토목사업</a></li>
+                                <li><a href="contents/biz03.html">주택사업</a></li>
+                                <li><a href="contents/biz04.html">플랜트/환경사업</a></li>
+                                <li><a href="contents/biz05.html">사업실적검색</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contents/ir01.html"><span>IR</span></a>
+                            <ul class="depth2">
+                                <li><a href="contents/ir01.html">기업지배구조</a></li>
+                                <li><a href="contents/ir02.html">경영정보</a></li>
+                                <li><a href="contents/ir03.html">주택사업</a></li>
+                                <li><a href="contents/ir04.html">재무정보</a></li>
+                                <li><a href="contents/ir05.html">주가정보</a></li>
+                                <li><a href="contents/ir05.html">IR Contact</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contents/ir01.html"><span>홍보센터</span></a>
+                            <ul class="depth2">
+                                <li><a href="contents/news.html">금호뉴스</a></li>
+                                <li><a href="contents/sellLis.html">분양뉴스</a></li>
+                                <li><a href="contents/ci.html">CI/BI</a></li>
+                                <li><a href="contents/brochure.html">PR갤러리</a></li>
+                                <li><a href="contents/kumho.html">금호역사관</a></li>
+                                <li><a href="https://webzine.kumhoenc.com/webzine/202401/00_main/main.asp" target="_blank" title="새창링크">웹진</a></li>
+                                <li><a href="https://kumhoenc.recruiter.co.kr/appsite/company/index" target="_blank" title="새창링크">인재채용</a></li>
+                                <li><a href="contents/guide.html">채용가이드</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="gnb_close">메뉴닫기</button>
+            </nav>
+            <div class="tnb">
+                <a href="https://www.kumhoenc.com/eng/main/index.asp" target="_blank" title="새창링크" class="lang">ENG</a>
+                <a href="https://www.khapt.co.kr/oullim/main" target="_blank" title="새창링크" class="link">어울림</a>
+            </div>
+        </header>
+        <div class="container" id="container">
+            <section class="visual"></section>
+            <section class="biz"></section>
+            <section class="news"></section>
+            <section class="service"></section>
+        </div>
+        <footer class="footer"></footer>
+    </div>
 </body>
 </html>

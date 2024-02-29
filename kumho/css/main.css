@@ -1,5 +1,6 @@
 @import url(default.css);
 @import url(common.css);
+@import url(layout.css);
 
 /* 
     파일명 : main.css 
@@ -8,3 +9,8 @@
     설  명 : 메인페이지에만 틀어가는 스타일을 저장
             ( header와 footer 빼고 전부 다 )
 */
+
+.visual {
+    background: url(../images/main/visual01.png) no-repeat center center / cover;
+    height: 800px;
+}
