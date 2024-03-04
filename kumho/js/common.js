@@ -52,20 +52,20 @@ $(document).ready(function(){
         device_chk()
     })
     $('.header .gnb ul.depth1 > li').on('mouseenter focusin', function(){
-        if( device_status = 'pc'){
+        if( device_status == 'pc'){
             $('.header').addClass('menu_over')
             $('.header .gnb ul.depth1 > li').removeClass('on')
             $(this).addClass('on')    
         } 
     })
     $('.header').on('mouseleave', function(){
-        if( device_status = 'pc'){
+        if( device_status == 'pc'){
             $('.header').removeClass('menu_over')
             $('.header .gnb ul.depth1 > li').removeClass('on')
         }
     })
     $('.header .tnb .lang').on('focusin', function(){
-        if( device_status = 'pc'){
+        if( device_status == 'pc'){
             $('.header').removeClass('menu_over')
             $('.header .gnb ul.depth1 > li').removeClass('on')
         }       
@@ -90,6 +90,18 @@ $(document).ready(function(){
     $('.header .gnb .gnb_close').on('click', function(){
         $('.header').removeClass('menu_open')
         $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+    })
+
+    /*
+        footer 그룹사 바로가기 열기/ 닫기
+        .footer .family_site .open를 클릭하면 family_site에 on클래스 추가
+        .footer .family_site .close를 클릭하면 family_site에 on클래스 삭제
+    */
+    $('.footer .family_site .open').on('click', function(){
+        $('.family_site').addClass('on')
+    })
+    $('.footer .family_site .close').on('click', function(){
+        $('.family_site').removeClass('on')
     })
 
 }) //$(document).ready

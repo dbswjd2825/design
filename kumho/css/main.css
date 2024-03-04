@@ -10,7 +10,489 @@
             ( header와 footer 빼고 전부 다 )
 */
 
-.visual {
-    background: url(../images/main/visual01.png) no-repeat center center / cover;
-    height: 800px;
+.visual h2 {
+    display: none;
+}
+.visual .swiper { height:800px } /* 팝업의 높이가 됨 */
+.visual .swiper-slide img { display:block; width:100%; height:100%; object-fit:cover; } 
+.visual .visual_txt {
+    position: absolute; /* swiper-slide 기준으로*/
+    left: calc(50% - 640px);
+    width: 1280px;
+    top: 350px;
+    text-align: center;
+}
+.visual .visual_txt span {
+    display: block;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+.visual .visual_txt strong {
+    display: block;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    line-height: 1.1;
+}
+.visual .visual_txt strong br {
+    display: none;
+}
+.visual .btn_ctrl {
+    position: absolute; /* swiper-slide 기준으로 */
+    left: calc(50% - 60px); 
+    bottom: 30px;
+    z-index: 10;
+    display: flex; /* 버튼사이 여백 삭제 */
+}
+.visual .btn_ctrl button {
+    width: 30px;
+    height: 30px;
+    border-width: 1px 1px 1px 0;
+    border-style: solid;
+    border-color: #fff;
+    font-size: 0;
+    line-height: 0;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.visual .btn_ctrl button:first-child {
+    border-left-width: 1px;
+    border-radius: 20px 0 0 20px;
+}
+.visual .btn_ctrl button:last-child {
+    border-radius: 0 20px 20px 0;
+}
+.visual .btn_ctrl .prev {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.619' height='13.519' viewBox='0 0 7.619 13.519'%3E%3Cpath id='chevron_left_FILL0_wght300_GRAD0_opsz24' d='M351.114-686.824l5.154,5.154a.916.916,0,0,1,.269.661.9.9,0,0,1-.269.673.908.908,0,0,1-.667.275.908.908,0,0,1-.667-.275l-5.687-5.687A1.048,1.048,0,0,1,349-686.4a1.215,1.215,0,0,1-.073-.426,1.219,1.219,0,0,1,.073-.426,1.051,1.051,0,0,1,.251-.375l5.687-5.687a.916.916,0,0,1,.661-.269.9.9,0,0,1,.673.269.908.908,0,0,1,.275.667.909.909,0,0,1-.275.667Z' transform='translate(-348.924 693.58)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    background-size: 7PX auto;
+}
+.visual .btn_ctrl .stop {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13.333' height='13.333' viewBox='0 0 13.333 13.333'%3E%3Cpath id='pause_FILL0_wght300_GRAD0_opsz24' d='M229.488-726.666a1.479,1.479,0,0,1-1.084-.455,1.478,1.478,0,0,1-.454-1.083V-738.46a1.479,1.479,0,0,1,.454-1.084,1.476,1.476,0,0,1,1.084-.455H231.8a1.476,1.476,0,0,1,1.084.455,1.479,1.479,0,0,1,.455,1.084V-728.2a1.479,1.479,0,0,1-.455,1.083,1.479,1.479,0,0,1-1.084.455Zm-7.949,0a1.478,1.478,0,0,1-1.084-.455A1.479,1.479,0,0,1,220-728.2V-738.46a1.479,1.479,0,0,1,.455-1.084A1.475,1.475,0,0,1,221.54-740h2.308a1.476,1.476,0,0,1,1.084.455,1.479,1.479,0,0,1,.454,1.084V-728.2a1.478,1.478,0,0,1-.454,1.083,1.479,1.479,0,0,1-1.084.455Zm7.949-1.538H231.8V-738.46h-2.308Zm-7.949,0h2.308V-738.46H221.54Zm0-10.256v0Zm7.949,0v0Z' transform='translate(-220.001 739.999)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    background-size: 13PX auto;
+}
+.visual .btn_ctrl .play {
+    display: none; /* 숨김 */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10.956' height='13.334' viewBox='0 0 10.956 13.334'%3E%3Cpath id='play_arrow_FILL0_wght300_GRAD0_opsz24' d='M340-681.714v-11.08a1.061,1.061,0,0,1,.338-.81,1.118,1.118,0,0,1,.789-.316,1.16,1.16,0,0,1,.3.041,1.259,1.259,0,0,1,.3.122l8.721,5.552a1.161,1.161,0,0,1,.385.419,1.129,1.129,0,0,1,.128.532,1.129,1.129,0,0,1-.128.532,1.16,1.16,0,0,1-.385.419l-8.721,5.552a1.251,1.251,0,0,1-.3.122,1.16,1.16,0,0,1-.3.041,1.118,1.118,0,0,1-.789-.317A1.06,1.06,0,0,1,340-681.714ZM341.871-687.254Zm0,4.176,6.569-4.176-6.569-4.176Z' transform='translate(-340.001 693.921)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    background-size: 11px auto;
+}
+.visual .btn_ctrl .next {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7.619' height='13.519' viewBox='0 0 7.619 13.519'%3E%3Cpath id='chevron_left_FILL0_wght300_GRAD0_opsz24' d='M354.353-686.823,349.2-681.67a.916.916,0,0,0-.269.661.894.894,0,0,0,.269.673.908.908,0,0,0,.667.275.908.908,0,0,0,.667-.275l5.687-5.687a1.047,1.047,0,0,0,.251-.375,1.214,1.214,0,0,0,.073-.426,1.217,1.217,0,0,0-.073-.426,1.048,1.048,0,0,0-.251-.375l-5.687-5.687a.917.917,0,0,0-.661-.269.9.9,0,0,0-.673.269.908.908,0,0,0-.275.667.908.908,0,0,0,.275.667Z' transform='translate(-348.924 693.58)' fill='%23fff'/%3E%3C/svg%3E%0A");
+    background-size: 7px auto;
+}
+@media screen and (max-width:1320){ 
+    .visual .visual_txt strong {
+        font-size: 45px;
+    }
+}
+@media screen and (max-width:1024px){ 
+    .visual .swiper {
+        height: 600px;
+    }
+    .visual .visual_txt {
+        top: 230px;
+    }
+    .visual .visual_txt strong {
+        font-size: 40px;
+    }
+    .visual .visual_txt strong br {
+        display: block;
+    }
+    .visual .btn_ctrl {
+        left: calc(50% - 40px); 
+        bottom: 25px;
+    }
+    .visual .btn_ctrl button {
+        width: 20px;
+        height: 20px;
+    }
+    .visual .btn_ctrl button:first-child {
+        border-radius: 10px 0 0 10px;
+    }
+    .visual .btn_ctrl button:last-child {
+        border-radius: 0 10px 10px 0;
+    }
+    .visual .btn_ctrl .prev {
+        background-size: 5PX auto;
+    }
+    .visual .btn_ctrl .stop {
+        background-size: 9PX auto;
+    }
+    .visual .btn_ctrl .play {
+        background-size: 7px auto;
+    }
+    .visual .btn_ctrl .next {
+        background-size: 5px auto;
+    }
+}
+@media screen and (max-width:768px){
+    .visual .swiper {
+        height: 450px;
+    }
+    .visual .visual_txt {
+        top: 180px;
+        left: 20px; 
+        text-align: left;
+    }
+    .visual .visual_txt strong {
+        font-size: 35px;
+    }
+    .visual .btn_ctrl {
+        bottom: 20px;
+        right: 20px;
+        left: auto;
+    }
+    .visual .btn_ctrl .prev,
+    .visual .btn_ctrl .next {
+        display: none;
+    }
+    .visual .btn_ctrl button {
+        border-width: 1px 1px 1px 1px;
+        border-radius: 100%;
+    }
+}
+@media screen and (max-width:500px){
+    .visual .swiper {
+        height: 300px;
+    }
+    .visual .visual_txt {
+        top: 130px;
+    }
+    .visual .visual_txt span {
+        display: none;
+    }
+    .visual .visual_txt strong {
+        font-size: 30px;
+    }
+}
+
+.biz .tit {
+    margin: 130px 0 70px;
+}
+.biz .tit h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #D20031;
+}
+.biz .tit p {
+    font-size: 35px;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin-top: 8px;
+}
+.biz .list ul {
+    display: flex;
+}
+.biz .list ul li {
+    width: 25%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-right: 2px;
+    color: #fff;
+    position: relative; /* before 정렬의 기준 */
+    transition: 0.5s;
+} 
+.biz .list ul li::before {
+    position: absolute; /* li를 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.3;
+    content: "";
+    transition: 0.5s;
+}
+.biz .list ul li:last-child {
+   margin-right: 0;
+}
+.biz .list ul li.biz01 {
+    background-image: url(../images/main/biz01.png);
+}
+.biz .list ul li.biz02 {
+    background-image: url(../images/main/biz02.png);
+}
+.biz .list ul li.biz03 {
+    background-image: url(../images/main/biz03.png);
+}
+.biz .list ul li.biz04 {
+    background-image: url(../images/main/biz04.png);
+}
+.biz .list ul li a {
+    display: block;
+    height: 520px;
+    padding: 405px 35px 0 35px;
+    position: relative; /* before 보다 위에 존재하기 위해서 */
+    z-index: 10;
+}
+.biz .list ul li a strong {
+    display: block;
+    margin-bottom: 2px;
+}
+.biz .list ul li a span {
+    display: block;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+}
+.biz .list ul li a em {
+    display: none;
+}
+/* 마우스 오버 */
+.biz .list ul li.on a {
+    padding-top: 350px;
+}
+.biz .list ul li.on {
+    width: 50%;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.biz .list ul li.on span {
+    font-size: 50px;
+}
+.biz .list ul li.on a em {
+    display: block;
+}
+.biz .list ul li::before {
+    opacity: 0;
+}
+.biz .list ul li.off {
+    color: rgba(255, 255, 255, 0.8);
+    /* li가 줄어들어서 글자가 줄바뀌는 것을 방지 */
+    white-space: nowrap;
+    overflow: hidden;
+}
+.biz .list ul li.off::before {
+    opacity: 0.5;
+}
+@media screen and (max-width:1320px){ 
+    .biz .list ul li a {
+        padding: 400px 20px 0 20px;
+    }
+    .biz .list ul li.on a {
+        padding-top: 380px;
+    }
+    .biz .list ul li.on span {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:1024px){ 
+    .biz .tit {
+        margin: 100px 0 50px;
+    }
+    .biz .tit h2 {
+        font-size: 15px;
+    }
+    .biz .tit p {
+        font-size: 25px;
+    }
+    .biz .list ul {
+        flex-wrap: wrap; /* 줄바꿈 허용*/
+    }
+    .biz .list ul li {
+        width: calc(50% - 1px);
+        margin-bottom: 2px;
+    }
+    .biz .list ul li:nth-child(2) {
+        margin-right: 0;
+    }
+    .biz .list ul li a {
+        padding: 400px 20px 0 20px;
+    }
+}
+@media screen and (max-width:768px){
+    .biz .tit {
+        margin: 70px 0 30px 0;
+    }
+    .biz .tit h2 {
+        font-size: 15px;
+    }
+    .biz .tit p {
+        font-size: 20px;
+    }
+    .biz .list ul {
+        display: block;
+    }
+    .biz .list ul li {
+        width: auto;
+        color: #2d2d2d;
+        margin-right: 0;
+    }
+    .biz .list ul li::before {
+        background-color: #fff;
+        opacity: 0.5;
+    }
+    .biz .list ul li a {
+        height: auto;
+        padding: 28px;
+        position: relative; /* after 정렬의 기준 */
+    }
+    .biz .list ul li a::after {
+        position: absolute;
+        right: 20px;
+        top: 42px;
+        width: 10px;
+        height: 18px;
+        content: "";
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='17.744' viewBox='0 0 10 17.744'%3E%3Cpath id='chevron_left_FILL0_wght300_GRAD0_opsz24' d='M356.05-684.712l-6.765,6.764a1.2,1.2,0,0,0-.353.867,1.173,1.173,0,0,0,.353.883,1.191,1.191,0,0,0,.875.361,1.191,1.191,0,0,0,.875-.361l7.464-7.464a1.374,1.374,0,0,0,.329-.492,1.593,1.593,0,0,0,.1-.559,1.6,1.6,0,0,0-.1-.559,1.377,1.377,0,0,0-.329-.492l-7.464-7.464a1.2,1.2,0,0,0-.867-.353,1.174,1.174,0,0,0-.883.353,1.192,1.192,0,0,0-.361.875,1.192,1.192,0,0,0,.361.875Z' transform='translate(-348.924 693.58)' fill='%232d2d2d'/%3E%3C/svg%3E%0A");
+    }
+    .biz .list ul li a strong {
+        font-size: 15px;
+    }
+    .biz .list ul li a span {
+        font-size: 25px;
+    }
+    .biz .list ul li a span br {
+        display: none;
+    }
+} 
+.news {
+    margin-bottom: 100px;
+}
+.news .tit {
+    margin: 130px 0 70px 0;
+}
+.news .tit h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #D20031;
+}
+.news .tit p {
+    font-size: 35px;
+    line-height: 1.2;
+    color: #1d1d1d;
+    margin-top: 8px;
+}
+.news .list ul li {
+    border-top: 3px solid #707070;
+}
+.news .list ul li:hover {
+    border-color: #FE9A9A;
+    background-color: rgba(255, 204, 203, 0.2);
+}
+.news .list ul li a {
+    display: block;
+}
+.news .list ul li a .date {
+    display: block;
+    font-size: 30px;
+    color: #1d1d1d;
+    margin: 20px 0 13px;
+}
+.news .list ul li a strong {
+    font-size: 25px;
+    font-weight: 700;
+    color: #2d2d2d;
+    /* 두줄로 제한 */
+    line-height: 1.4;
+    height: 2.8em;
+    overflow: hidden;
+    display: block;
+}
+.news .list ul li a p {
+    margin: 20px 0 30px 0;
+    /* 세줄로 제한 */
+    line-height: 1.4;
+    height: 4.2em;
+    overflow: hidden;
+}
+.news .list ul li a .photo {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    overflow: hidden;
+    height: 200px;
+}
+.news .list ul li a .photo img {
+    transition: 0.5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.news .list ul li a:hover .photo img {
+    transform: scale3d(1.2, 1.2, 1);
+}
+.news .more {
+    font-size: 13px;
+    text-align: right;
+    margin-top: 18px;
+}
+.news .more a {
+    display: inline-block;
+    padding-right: 15px;
+    position: relative; /* after 정렬의 기준 */
+}
+.news .more a::after {
+    position: absolute;
+    right: -8px;
+    top: 12px;
+    width: 106px;
+    height: 10px;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='98.354' height='10.854' viewBox='0 0 98.354 10.854'%3E%3Cg id='그룹_4' data-name='그룹 4' transform='translate(-1503.5 -2255.146)'%3E%3Cline id='선_4' data-name='선 4' x2='98' transform='translate(1503.5 2265.5)' fill='none' stroke='%23707070' stroke-width='1'/%3E%3Cline id='선_5' data-name='선 5' x2='10' y2='10' transform='translate(1591.5 2255.5)' fill='none' stroke='%23707070' stroke-width='1'/%3E%3C/g%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px){ 
+    .news .tit {
+        margin: 100px 0 50px;
+    }
+    .news .tit h2 {
+        font-size: 15px;
+    }
+    .news .tit p {
+        font-size: 25px;
+    }
+    .news .list ul li a .date {
+        font-size: 25px;
+        margin: 18px 0 10px 0;
+    }
+    .news .list ul li a strong {
+        font-size: 20px;
+    }
+    .news .list ul li a p {
+        margin: 18px 0 25px 0;
+    }
+}
+@media screen and (max-width:768px){
+    news {
+        margin-bottom: 80px;
+    }
+    .news .tit {
+        margin: 70px 0 30px 0;
+    }
+    .news .tit h2 {
+        font-size: 15px;
+    }
+    .news .tit p {
+        font-size: 20px;
+    }
+    .news .list ul li a .photo {
+        height: 120px;
+    }
+}
+@media screen and (max-width:500px){
+    .news {
+        margin-bottom: 50px;
+    }
+    .news .tit {
+        margin: 70px 0 20px;
+    }
+    .news .tit p {
+        font-size: 20px;
+    }
+    .news .list ul li {
+        border: 1px solid #707070;
+        border-radius: 10px;
+        padding: 20px 30px 30px 30px;
+    }
+    .news .list ul li a .date {
+        font-size: 15px;
+        margin: 0px 0 7px 0;
+    }
 }

@@ -7,11 +7,14 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/jquery-3.7.1.min.js"></script> 
     <script src="js/common.js"></script>
+    <!-- swiper 라이브러리 삽입 -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+    <script src="js/main.js"></script>
     <title>금호건설</title>
 </head>
 <body>
     <div class="skipnav">
-
     </div>
     <div id="wrap" class="main">
         <!-- 메뉴가 상단 고정 : fixed
@@ -91,12 +94,157 @@
             </div>
         </header>
         <div class="container" id="container">
-            <section class="visual"></section>
-            <section class="biz"></section>
-            <section class="news"></section>
+            <section class="visual">
+                <h2>팝업</h2>
+                <div class="swiper"> 
+                    <ul class="swiper-wrapper"> 
+                        <li class="swiper-slide">
+                            <img src="images/main/visual_bg01.png" alt="">
+                            <div class="visual_txt">
+                                <span>더 나은 미래를 만드는 금호건설</span>
+                                <strong>We Build <br>a Better Future</strong>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="images/main/visual_bg02.png" alt="">
+                            <div class="visual_txt">
+                                <span>혁신기술로 가치있는 공간을 만드는 금호건설</span>
+                                <strong>Space Innovation</strong>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="images/main/visual_bg03.png" alt="">
+                            <div class="visual_txt">
+                                <span>개성과 취향을 존중하는 주거 공간을 만드는 금호건설</span>
+                                <strong>Enhance Your Life</strong>
+                            </div>
+                        </li>
+                        <li class="swiper-slide">
+                            <img src="images/main/visual_bg04.png" alt="">
+                            <div class="visual_txt">
+                                <span>우수한 기술력을 바탕으로 세계로 뻗어나가는 금호건설</span>
+                                <strong>Will Challenge <br>The World's Best</strong>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="btn_ctrl">
+                        <button class="prev">이전팝업보기</button>
+                        <button class="stop">일시정지</button>
+                        <button class="play">재생</button>
+                        <button class="next">다음팝업보기</button>
+                    </div>
+                </div> <!--swiper-->
+            </section>
+            <section class="biz">
+                <div class="tit">
+                    <div class="wrapper">
+                        <h2>사업분야</h2>
+                        <p>세계로 뻗어가는 건설 <br>한류의 중심에 금호건설이 있습니다.</p>
+                    </div>
+                </div>
+                <div class="list">
+                    <ul>
+                        <!-- 하나의 li에 마우스를 오버하면 오버한 li에는 on 클래스 추가
+                        나머지 모든 li에는 off클래스 추가 -->
+                        <li class="biz01">
+                            <a href="contents/biz01.html">
+                                <strong>건축사업</strong>
+                                <span>ARCHITECTURE</span>
+                                <em>도시의 새로운 가치를 창출하고 공간의 진화를 이끌어냅니다.</em>
+
+                            </a>
+                        </li>
+                        <li class="biz02">
+                            <a href="contents/biz02.html">
+                                <strong>토목사업</strong>
+                                <span>CIVIL</span>
+                                <em>공공의 이익을 위한 인프라 건설을 통해 경제 발전에 이바지하고 있습니다.</em>
+                            </a>
+                        </li>
+                        <li class="biz03">
+                            <a href="contents/biz03.html">
+                                <strong>주택사업</strong>
+                                <span>HOUSING</span>
+                                <em>사람과 공간의 연결을 통해 새로운 주거문화를 만듭니다.</em>
+                            </a>
+                        </li>
+                        <li class="biz04">
+                            <a href="contents/biz04.html">
+                                <strong>플랜트 / 환경사업</strong>
+                                <span>PLANT <br>ENVIRONMENT</span>
+                                <em>다공종 고급기술을 집약하여 자원 및 에너지 인프라를 건설합니다.</em>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="news">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>금호뉴스</h2>
+                        <p>새로운 내일을 만드는 <br>금호의 오늘을 만나보세요.</p>
+                    </div>
+                    <div class="list">
+                        <div class="swiper"> 
+                            <ul class="swiper-wrapper"> 
+                                <li class="swiper-slide">
+                                    <a href="contents/news.html">
+                                        <span class="date">2024.01.19</span>
+                                        <strong>금호건설, 펄벅재단에 기부금 전달…다문화가정 후원</strong>
+                                        <p>금호건설은 다문화가정 아이들이 건강한 사회구성원으로 성장할 수 있도록 한국펄벅재단에 기부금을 전달했다고 22일 밝혔다.금호건설은 펄벅재단을 통해 지난 16년간 저소득 다문화가</p>
+                                        <span class="photo"><img src="images/main/news01.png" alt="기부금 전달 기념 사진"></span>
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a href="contents/news.html">
+                                        <span class="date">2023.12.22</span>
+                                        <strong>금호건설, 소외 이웃에 겨울 동계 점퍼 111벌 기부</strong>
+                                        <p>금호건설(002990)은 서울 종로구 지역민의 따듯한 겨울나기 지원을 위해 동계 점퍼 111벌을 전달했다고 22일 밝혔다. 금호건설 임직원들이 준비한 겨울 동계 점퍼는 종로구청 주관으로</p>
+                                        <span class="photo"><img src="images/main/news02.png" alt="점퍼를 나눠주는 사진"></span>
+                                    </a>
+                                </li> 
+                                <li class="swiper-slide">
+                                    <a href="contents/news.html">
+                                        <span class="date">2023.12.19</span>
+                                        <strong>금호건설, '월곶~판교 복선전철 제9공구 공사' 수주</strong>
+                                        <p>금호건설은 국가철도공단에서 발주한 ‘월곶~판교 복선전철 제9공구 노반신설 기타공사’를 수주했다고 20일 밝혔다. 금호건설이 수주한 ‘월곶~판교 복선전철 제9공구 노반신설 기타공사’는</p>
+                                        <span class="photo"><img src="images/main/news03.png" alt="공사구간 안내 그림"></span>
+                                    </a>
+                                </li>  
+                            </ul>
+                        </div> <!--swiper-->
+                    </div> <!--list-->
+                    <div class="more"><a href="contents/news.html">VIEW MORE</a></div>
+                </div> <!--wrapper-->
+            </section>
             <section class="service"></section>
         </div>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <div class="wrapper">
+                <!--그룹사 바로가기를 클릭하면 family_site에 on클래스를 추가
+                    open 버튼 사라짐, close버튼 나타남, ul 리스트 나타남 -->
+                <div class="family_site">
+                    <button class="open" title="열기">그룹사 바로가기</button>
+                    <ul>
+                        <li><a href="https://www.kumhobuslines.co.kr" target="_blank" title="새창링크">금호고속</a></li>
+                        <li><a href="https://www.usquare.co.kr" target="_blank" title="새창링크">금호터미널</a></li>
+                        <li><a href="http://www.kumhoarts.com" target="_blank" title="새창링크">금호문화재단</a></li>
+                        <li><a href="https://flyasiana.com/" target="_blank" title="새창링크">아시아나항공</a></li>
+                    </ul>
+                    <button class="close" title="닫기">그룹사 바로가기</button>
+                </div>
+                <div class="footer_nav">
+                    <ul>
+                        <li><a href="#n">제보실</a></li>
+                        <li><a href="#n">고객센터</a></li>
+                        <li><a href="#n">OB사랑방</a></li>
+                        <li><a href="#n">Contact us</a></li>
+                        <li><a href="#n">개인정보처리방침</a></li>
+                    </ul>
+                </div>
+                <div class="copyright">COPYROGHT (C) KUMHO E&C ALL RIGHTS RESERVED</div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
