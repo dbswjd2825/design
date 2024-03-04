@@ -43,8 +43,8 @@
 }
 .header .gnb ul.depth1 > li > a {
     font-size: 20px;
-    line-height: 100px;
     display: block;
+    line-height: 100px;
 }
 .header .gnb ul.depth2 {
     display: none; /* 메뉴 오버하면 나옴*/
@@ -118,15 +118,32 @@
         display: block; /* 2차메뉴 보임 */
         height: 350px;
         padding-top: 20px;
+        border-right: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .header.menu_over .gnb ul.depth1 > li:first-child > ul.depth2 {
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
     }
     .header .gnb ul.depth1 > li.on > a {
         color: #D20031;
         font-weight: 700;
+        position: relative; /* after 정렬 기준 */
+    }
+    .header .gnb ul.depth1 > li.on > a::after {
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 5px;
+        background-color: #FFCCCB;
+        content: "";
+    }
+    .header .gnb ul.depth1 > li.on > ul.depth2 {
+        background-color: rgba(255, 255, 255, 0.3);
     }
     .header .gnb ul.depth2 > li > a:hover, 
     .header .gnb ul.depth2 > li.on > a {
         font-weight: 700;
-        color: #D20031;
+        color: #FF6160;
     } 
     .header.menu_over .logo a {
         background-image: url(../images/common/logo_b.svg);
