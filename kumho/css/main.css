@@ -351,7 +351,7 @@
     }
 } 
 .news {
-    margin-bottom: 100px;
+    margin-bottom: 160px;
 }
 .news .tit {
     margin: 130px 0 70px 0;
@@ -440,7 +440,7 @@
 }
 @media screen and (max-width:1024px){ 
     .news .tit {
-        margin: 100px 0 50px;
+        margin: 100px 0 50px 0;
     }
     .news .tit h2 {
         font-size: 15px;
@@ -460,7 +460,7 @@
     }
 }
 @media screen and (max-width:768px){
-    news {
+    .news {
         margin-bottom: 80px;
     }
     .news .tit {
@@ -481,7 +481,7 @@
         margin-bottom: 50px;
     }
     .news .tit {
-        margin: 70px 0 20px;
+        margin: 70px 0 20px 0;
     }
     .news .tit p {
         font-size: 20px;
@@ -494,5 +494,168 @@
     .news .list ul li a .date {
         font-size: 15px;
         margin: 0px 0 7px 0;
+    }
+}
+
+.service {
+    background: url(../images/main/service_bg.png) no-repeat center center / cover;
+    color: #fff;
+    padding: 143px 0 250px 0;
+}
+.service .tit {
+    margin: 0 0 70px 0;
+}
+.service .tit h2 {
+    display: none;
+}
+.service .tit p {
+    font-size: 35px;
+    line-height: 1.2;
+    text-align: center;
+    margin-top: 8px;
+}
+.service .list ul { 
+    display: flex;
+    justify-content: space-between;
+}
+.service .list ul li {
+    width: calc(33.33% - 18.66px);
+    border: 2px solid #fff;
+    transition: 0.5s;
+}
+.service .list ul li:hover {
+    transform: translate(-10px, -10px);
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px) opacity(50%);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7);
+}
+.service .list ul li:hover strong {
+    color: #FE9A9A;
+}
+.service .list ul li a {
+    display: block;
+    height: 125px;
+    padding: 32px 0 0 104px;
+    position: relative; /* before 정렬의 기준 */
+}
+.service .list ul li a::before {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    width: 55px;
+    height: 55px;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.service .list ul li.esg a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='41' height='45.708' viewBox='0 0 41 45.708'%3E%3Cpath id='potted_plant_FILL0_wght100_GRAD0_opsz24' d='M184.468-777.609H199.4a2.161,2.161,0,0,0,1.429-.487,2.771,2.771,0,0,0,.844-1.2l3.117-12.4H179.078l3.117,12.4a2.768,2.768,0,0,0,.844,1.2A2.161,2.161,0,0,0,184.468-777.609Zm0,1.817a4.058,4.058,0,0,1-2.532-.844,4.135,4.135,0,0,1-1.493-2.208L177.195-791.7h29.48l-3.246,12.856a4.306,4.306,0,0,1-1.494,2.175,3.962,3.962,0,0,1-2.533.877Zm-8.311-17.727h31.688a2.281,2.281,0,0,0,1.689-.65,2.2,2.2,0,0,0,.649-1.622v-4.22H173.818v4.22a2.147,2.147,0,0,0,.682,1.622A2.31,2.31,0,0,0,176.156-793.519Zm15.779-14.869a10.366,10.366,0,0,1,3.279-7.728,17.184,17.184,0,0,1,7.825-4.351.915.915,0,0,1,.487,0,.972.972,0,0,1,.422.262.966.966,0,0,1,.26.421.932.932,0,0,1,0,.488,15.518,15.518,0,0,1-4.189,7.011,14.61,14.61,0,0,1-7.175,3.832v6.622h17.208a1.892,1.892,0,0,1,1.4.552,1.893,1.893,0,0,1,.552,1.4v4.091a3.89,3.89,0,0,1-1.234,2.889,4.051,4.051,0,0,1-2.922,1.2H176.156a4.051,4.051,0,0,1-2.922-1.2A3.89,3.89,0,0,1,172-795.791v-4.091a1.894,1.894,0,0,1,.552-1.4,1.892,1.892,0,0,1,1.4-.552h17.078v-6.622a14.618,14.618,0,0,1-7.175-3.832,15.52,15.52,0,0,1-4.188-7.011.924.924,0,0,1,0-.488.961.961,0,0,1,.26-.421.967.967,0,0,1,.422-.262.918.918,0,0,1,.488,0,17.187,17.187,0,0,1,7.824,4.351A10.366,10.366,0,0,1,191.935-808.388Z' transform='translate(-171.5 821)' fill='%23fff' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E%0A");
+    background-size: 40px auto;
+}
+.service .list ul li.ir a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='41' height='43.042' viewBox='0 0 41 43.042'%3E%3Cpath id='finance_mode_FILL0_wght100_GRAD0_opsz24' d='M198.09-822.5v-10.09a1.741,1.741,0,0,1,.518-1.284,1.742,1.742,0,0,1,1.284-.518,1.046,1.046,0,0,1,.77.311,1.045,1.045,0,0,1,.311.77V-822.5a1.889,1.889,0,0,0-1.443-.661A1.88,1.88,0,0,0,198.09-822.5Zm9.97,5.886V-842.2a1.741,1.741,0,0,1,.518-1.283,1.743,1.743,0,0,1,1.284-.519,1.046,1.046,0,0,1,.77.311,1.049,1.049,0,0,1,.311.771V-819.5Zm-20.06,4.2V-822.98a1.744,1.744,0,0,1,.518-1.283,1.743,1.743,0,0,1,1.284-.519,1.047,1.047,0,0,1,.77.312,1.045,1.045,0,0,1,.311.77v8.409Zm1.659,10.45a.78.78,0,0,1-.789-.511.8.8,0,0,1,.21-.931l9.249-9.249a1.854,1.854,0,0,1,1.195-.541,1.652,1.652,0,0,1,1.268.421l7.267,6.246,17.057-17.058h-5.165a.81.81,0,0,1-.6-.242.815.815,0,0,1-.242-.6.812.812,0,0,1,.242-.6.815.815,0,0,1,.6-.239H226.2a1.742,1.742,0,0,1,1.284.518,1.741,1.741,0,0,1,.518,1.284v6.246a.811.811,0,0,1-.242.6.817.817,0,0,1-.6.241.809.809,0,0,1-.6-.241.815.815,0,0,1-.24-.6v-5.166l-17.057,17.058a1.847,1.847,0,0,1-1.195.54,1.648,1.648,0,0,1-1.268-.42l-7.267-6.246-9.249,9.249a.965.965,0,0,1-.278.17A.879.879,0,0,1,189.659-801.958Z' transform='translate(-187.5 844.5)' fill='%23fff' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E%0A");
+    background-size: 43px auto;
+}
+.service .list ul li.webzine a::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='48.639' viewBox='0 0 36 48.639'%3E%3Cpath id='book_5_FILL0_wght100_GRAD0_opsz24' d='M216.571-813.895a4.585,4.585,0,0,1-3.232-1.241A4.017,4.017,0,0,1,212-818.2v-34.412a4.623,4.623,0,0,1,1.339-3.3,6.066,6.066,0,0,1,3.232-1.8l17.3-3.722a3.826,3.826,0,0,1,3.3.751,3.655,3.655,0,0,1,1.469,3.036v29.123a3.636,3.636,0,0,1-.882,2.416,4.1,4.1,0,0,1-2.187,1.371l-19.59,4.375a3.5,3.5,0,0,0-1.5.751,1.764,1.764,0,0,0-.653,1.4,2.232,2.232,0,0,0,.816,1.8,2.9,2.9,0,0,0,1.926.686h26.511a2.034,2.034,0,0,0,1.5-.588,2.034,2.034,0,0,0,.588-1.5V-853.2a.886.886,0,0,1,.261-.653.886.886,0,0,1,.653-.261.886.886,0,0,1,.653.261.886.886,0,0,1,.261.653v35.392a3.778,3.778,0,0,1-1.143,2.775,3.778,3.778,0,0,1-2.775,1.143Zm3-9.076,15.606-3.461a1.869,1.869,0,0,0,1.175-.718,2.076,2.076,0,0,0,.457-1.306v-29.123a2.04,2.04,0,0,0-.784-1.632,2.014,2.014,0,0,0-1.763-.457l-14.692,3.2Zm-1.828.392v-33.5l-1.175.261a3.6,3.6,0,0,0-1.959,1.143,3,3,0,0,0-.784,2.057v31.343a8.1,8.1,0,0,1,1.045-.555,6.015,6.015,0,0,1,1.11-.359Zm-3.918-33.237v0Z' transform='translate(-211.5 862.033)' fill='%23fff' stroke='%23fff' stroke-width='1'/%3E%3C/svg%3E%0A");
+    background-size: 35px auto; 
+}
+.service .list ul li a strong {
+    display: block;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 3px;
+    transition: 0.5s;
+}
+.service .list ul li a span {
+    display: block;
+}
+
+
+@media screen and (max-width:1024px){ 
+    .service {
+        padding: 120px 0 200px 0;
+    }
+    .service .tit {
+        margin: 0 0 50px 0;
+    }
+    .service .tit h2 {
+        font-size: 15px;
+    }
+    .service .tit p {
+        font-size: 25px;
+    }
+    .service .list ul li {
+        width: calc(33.33% - 10.66px);
+        border-radius: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px) opacity(50%);
+    }
+    .service .list ul li a {
+        padding: 80px 0 10px 0;
+        text-align: center;
+        height: auto;
+    }
+    .service .list ul li a::before {
+        left: 0; 
+        top: 15px;
+        width: 100%;
+    }
+    .service .list ul li a strong {
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .service .list ul li a span {
+        display: none; /* 숨김 */
+    }
+}
+@media screen and (max-width:768px){
+    .service {
+        padding: 100px 0 150px 0;
+    }
+    .service .tit {
+        margin: 0 0 30px 0;
+    }
+    .service .tit p {
+        font-size: 20px;
+    }
+    .service .list ul li {
+        width: calc(33.33% - 6.66px);
+    }
+    .service .list ul li.esg a::before {
+        background-size: 35px auto;
+    }
+    .service .list ul li.ir a::before {
+        background-size: 40px auto;
+    }
+    .service .list ul li.webzine a::before {
+        background-size: 30px auto; 
+    }
+    .service .list ul li a strong {
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width:500px){
+    .service {
+        padding: 70px 0 100px 0;
+    }
+    .service .tit {
+        margin: 0 0 20px 0;
+    }
+    .service .tit p {
+        font-size: 20px;
+    }
+    .service .list ul li.esg a::before {
+        background-size: 32px auto;
+    }
+    .service .list ul li.ir a::before {
+        background-size: 37px auto;
+    }
+    .service .list ul li.webzine a::before {
+        background-size: 27px auto; 
+    }
+    .service .list ul li a strong {
+        font-size: 13px;
     }
 }

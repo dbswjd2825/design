@@ -4,3 +4,96 @@
     작성일 : 24.02.28
     설  명 : 모든 콘텐츠 페이지별 디자인 스타일 저장
 */
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
+/* ceo인사말 - 회사소개 */
+.cts_greeting {
+    margin-top: 160px;
+    padding-bottom: 250px;
+    position: relative;
+}
+.cts_greeting::before {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 900px;
+    height: 720px;
+    background-color: rgba(255, 204, 203, 0.3);
+    border-radius: 400px 0 0 400px ;
+    content: "";
+}
+.cts_greeting .tit {
+    font-size: 45px;
+    font-weight: 400;
+    color: #1d1d1d;
+    margin-bottom: 50px;
+}
+.cts_greeting .tit strong {
+    font-weight: 700;
+    color: #D20031;
+}
+.cts_greeting .tit br {
+    display: none;
+}
+.cts_greeting p {
+    margin-right: 600px;
+}
+.cts_greeting .ceo {
+    position: absolute;
+    left: calc(50% + 250px);
+    top: 70px;
+}
+.cts_greeting .ceo .photo img {
+    width: 500px;
+}
+.cts_greeting .sign {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 160px;
+}
+.cts_greeting .sign strong {
+    display: block;
+    margin: 15px 30px 0 0;
+    font-size: 20px;
+    color: #1d1d1d;
+}
+
+@media screen and (max-width:1320px){
+    .cts_greeting::before {
+        width: 800px;
+        height: 650px;
+    }
+    .cts_greeting .tit {
+        font-size: 35px;
+        margin-bottom: 40px;
+    }
+    .cts_greeting p {
+        margin-right: 500px;
+    }   
+    .cts_greeting .ceo {
+        left: calc(50% + 150px);
+        top: 60px;
+    }
+    .cts_greeting .ceo .photo img {
+        width: 430px;
+    }
+    .cts_greeting .sign {
+        margin-top: 135px;
+    }
+}
+@media screen and (max-width:1024px){ 
+    .cts_greeting p {
+        margin-right: 300px;
+    } 
+    .cts_greeting .tit br {
+        display: block; /* 줄바꿈허용*/
+    }
+   
+}
+@media screen and (max-width:768px){ 
+    .cts_greeting p {
+        margin-right: 0;
+    } 
+}
