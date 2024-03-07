@@ -611,6 +611,7 @@
 .cts_biz05 .login_group .login_chk label {
     position: relative; /* before 정렬의 기준 */
     padding-left: 40px;
+    cursor: pointer;
 }
 .cts_biz05 .login_group .login_chk label::before {
     position: absolute;
@@ -685,21 +686,233 @@
         font-size: 15px;
     }
 }
-
 .cts_biz05 .join_group {
     max-width: 550px;
     width: 100%;
     margin: 50px auto;
 }
+.cts_biz05 .join_group h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin-bottom: 25px;
+}
 .cts_biz05 .join_group .agree_box {
     width: 100%;
     height: 245px;
     border: 1px solid #ccc;
+    border-radius: 10px;
     padding: 20px;
     overflow-y: auto;
+    margin-top: 20px;
 }
 .cts_biz05 .join_group .agree_box .inner1 {
     width: 100%;
     height: 100%;
     overflow-y: auto;
+}
+.cts_biz05 .join_group .agree_box .inner1::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: transparent; 
+}
+.cts_biz05 .join_group .agree_box .inner1::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+.cts_biz05 .join_group .agree_box .inner2 {
+    white-space: pre-line;
+}
+.cts_biz05 .join_group .agree_box strong {
+    font-weight: 700;
+}
+.cts_biz05 .join_group .agree_btn {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0 100px 0;
+}
+.cts_biz05 .join_group .agree_btn input {
+    display: none;
+}
+.cts_biz05 .join_group .agree_btn label {
+    padding: 5px 0 30px 5px;
+    display: block;
+    position: relative; /* before 정렬의 기준 */
+    cursor: pointer;
+}
+.cts_biz05 .join_group .agree_btn label::before {
+    position: absolute;
+    left: -22px;
+    top: 3px;
+    width: 20px;
+    height: 20px;
+    content: "";
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath id='check_circle_FILL0_wght200_GRAD0_opsz24' d='M128.4-827.231,125.628-830a.559.559,0,0,0-.382-.167.519.519,0,0,0-.4.167.545.545,0,0,0-.177.393.545.545,0,0,0,.177.393l2.932,2.932a.861.861,0,0,0,.628.269.861.861,0,0,0,.628-.269l6.085-6.085a.559.559,0,0,0,.167-.382.519.519,0,0,0-.167-.4.545.545,0,0,0-.393-.177.545.545,0,0,0-.393.177ZM130-820a9.746,9.746,0,0,1-3.9-.787,10.1,10.1,0,0,1-3.177-2.137,10.094,10.094,0,0,1-2.139-3.174A9.726,9.726,0,0,1,120-830a9.747,9.747,0,0,1,.787-3.9,10.1,10.1,0,0,1,2.137-3.177,10.1,10.1,0,0,1,3.174-2.139A9.727,9.727,0,0,1,130-840a9.746,9.746,0,0,1,3.9.787,10.106,10.106,0,0,1,3.177,2.137,10.094,10.094,0,0,1,2.139,3.174A9.726,9.726,0,0,1,140-830a9.746,9.746,0,0,1-.787,3.9,10.105,10.105,0,0,1-2.137,3.177,10.1,10.1,0,0,1-3.174,2.139A9.727,9.727,0,0,1,130-820Zm0-1.111a8.579,8.579,0,0,0,6.306-2.583A8.579,8.579,0,0,0,138.889-830a8.579,8.579,0,0,0-2.583-6.306A8.579,8.579,0,0,0,130-838.889a8.579,8.579,0,0,0-6.306,2.583A8.579,8.579,0,0,0,121.111-830a8.579,8.579,0,0,0,2.583,6.306A8.579,8.579,0,0,0,130-821.111ZM130-830Z' transform='translate(-120 840)' fill='%233d3d3d'/%3E%3C/svg%3E%0A");
+}
+/* html에서 미리 체크되어 있게 <input type="radio" checked>를 주면
+css에서는 input:checked로 선택*/
+.cts_biz05 .join_group .agree_btn input:checked + label::before {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath id='check_circle_FILL1_wght200_GRAD0_opsz24' d='M128.4-827.231,125.628-830a.559.559,0,0,0-.382-.167.519.519,0,0,0-.4.167.545.545,0,0,0-.177.393.545.545,0,0,0,.177.393l2.932,2.932a.861.861,0,0,0,.628.269.861.861,0,0,0,.628-.269l6.085-6.085a.559.559,0,0,0,.167-.382.519.519,0,0,0-.167-.4.545.545,0,0,0-.393-.177.545.545,0,0,0-.393.177ZM130-820a9.746,9.746,0,0,1-3.9-.787,10.1,10.1,0,0,1-3.177-2.137,10.094,10.094,0,0,1-2.139-3.174A9.726,9.726,0,0,1,120-830a9.747,9.747,0,0,1,.787-3.9,10.1,10.1,0,0,1,2.137-3.177,10.1,10.1,0,0,1,3.174-2.139A9.727,9.727,0,0,1,130-840a9.746,9.746,0,0,1,3.9.787,10.106,10.106,0,0,1,3.177,2.137,10.094,10.094,0,0,1,2.139,3.174A9.726,9.726,0,0,1,140-830a9.746,9.746,0,0,1-.787,3.9,10.105,10.105,0,0,1-2.137,3.177,10.1,10.1,0,0,1-3.174,2.139A9.727,9.727,0,0,1,130-820Z' transform='translate(-120 840)' fill='%23d20031'/%3E%3C/svg%3E%0A");
+}
+.cts_biz05 .join_group .info .info_box {
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 35px;
+}
+.cts_biz05 .join_group .info .info_box > div {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #ccc;
+}
+.cts_biz05 .join_group .info .info_box > div:last-child {
+    border-bottom: 0;
+}
+.cts_biz05 .join_group .info .info_box .user_id label,
+.cts_biz05 .join_group .info .info_box .user_mail label,
+.cts_biz05 .join_group .info .info_box .user_pw label{
+    width: 100px;
+    height: 100%;
+    font-size: 0;
+    line-height: 0;
+    background-repeat: no-repeat;
+    background-position: center center;     
+}
+.cts_biz05 .join_group .info .info_box .user_id label {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32.662' height='30.867' viewBox='0 0 32.662 30.867'%3E%3Cpath id='person_FILL0_wght200_GRAD0_opsz24' d='M216.331-730.618a6.739,6.739,0,0,1-4.943-2.056,6.739,6.739,0,0,1-2.056-4.943,6.74,6.74,0,0,1,2.056-4.943,6.74,6.74,0,0,1,4.943-2.056,6.74,6.74,0,0,1,4.943,2.056,6.74,6.74,0,0,1,2.056,4.943,6.739,6.739,0,0,1-2.056,4.943A6.739,6.739,0,0,1,216.331-730.618ZM200-716.172v-1.418a4.774,4.774,0,0,1,.841-2.7,5.647,5.647,0,0,1,2.263-1.954,33.1,33.1,0,0,1,6.609-2.376,28.327,28.327,0,0,1,6.618-.792,28.327,28.327,0,0,1,6.618.792,33.1,33.1,0,0,1,6.609,2.376,5.647,5.647,0,0,1,2.263,1.954,4.774,4.774,0,0,1,.841,2.7v1.418a2.344,2.344,0,0,1-.7,1.725,2.343,2.343,0,0,1-1.725.7H202.423a2.343,2.343,0,0,1-1.725-.7A2.344,2.344,0,0,1,200-716.172Zm2.333.09h28v-1.507a2.421,2.421,0,0,0-.5-1.458,4.024,4.024,0,0,0-1.384-1.153,29.61,29.61,0,0,0-5.94-2.138,26.084,26.084,0,0,0-6.174-.743,26.084,26.084,0,0,0-6.174.743,29.61,29.61,0,0,0-5.94,2.138,4.024,4.024,0,0,0-1.384,1.153,2.42,2.42,0,0,0-.5,1.458Zm14-16.869a4.493,4.493,0,0,0,3.3-1.371,4.493,4.493,0,0,0,1.371-3.3,4.493,4.493,0,0,0-1.371-3.3,4.493,4.493,0,0,0-3.3-1.371,4.493,4.493,0,0,0-3.3,1.371,4.493,4.493,0,0,0-1.371,3.3,4.493,4.493,0,0,0,1.371,3.3A4.493,4.493,0,0,0,216.331-732.951ZM216.331-737.617ZM216.331-716.082Z' transform='translate(-200 744.616)' fill='%23999'/%3E%3C/svg%3E%0A");
+    background-size: 32px auto;
+}
+.cts_biz05 .join_group .info .info_box .user_mail label {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='23.333' viewBox='0 0 30 23.333'%3E%3Cpath id='mail_FILL0_wght200_GRAD0_opsz24' d='M122.692-736.667a2.608,2.608,0,0,1-1.921-.771,2.608,2.608,0,0,1-.771-1.921v-17.949a2.608,2.608,0,0,1,.771-1.921,2.608,2.608,0,0,1,1.921-.771h24.615a2.608,2.608,0,0,1,1.921.771,2.608,2.608,0,0,1,.771,1.921v17.949a2.608,2.608,0,0,1-.771,1.921,2.608,2.608,0,0,1-1.921.771Zm25.641-20.192-12.587,8.24a2.539,2.539,0,0,1-.357.155,1.185,1.185,0,0,1-.389.063,1.185,1.185,0,0,1-.389-.062,2.539,2.539,0,0,1-.357-.155l-12.587-8.24v17.5a1,1,0,0,0,.288.737,1,1,0,0,0,.737.288h24.615a1,1,0,0,0,.737-.288,1,1,0,0,0,.288-.737ZM135-750l12.82-8.333H122.179Zm-13.333-6.859v0Z' transform='translate(-120 760)' fill='%23999'/%3E%3C/svg%3E%0A");
+    background-size: 30px auto;
+}
+.cts_biz05 .join_group .info .info_box .user_pw label {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24.711' height='31.771' viewBox='0 0 24.711 31.771'%3E%3Cpath id='lock_FILL0_wght200_GRAD0_opsz24' d='M202.851-808.228a2.749,2.749,0,0,1-2.018-.833A2.749,2.749,0,0,1,200-811.08v-15.478a2.749,2.749,0,0,1,.833-2.018,2.749,2.749,0,0,1,2.018-.833H205.3v-3.53a6.811,6.811,0,0,1,2.055-5.005A6.811,6.811,0,0,1,212.356-840a6.811,6.811,0,0,1,5.005,2.055,6.811,6.811,0,0,1,2.055,5.005v3.53h2.444a2.748,2.748,0,0,1,2.018.833,2.749,2.749,0,0,1,.833,2.018v15.478a2.748,2.748,0,0,1-.833,2.018,2.749,2.749,0,0,1-2.018.833Zm0-1.765H221.86a1.057,1.057,0,0,0,.781-.305,1.057,1.057,0,0,0,.305-.781v-15.478a1.057,1.057,0,0,0-.305-.781,1.057,1.057,0,0,0-.781-.305H202.851a1.057,1.057,0,0,0-.781.305,1.057,1.057,0,0,0-.305.781v15.478a1.058,1.058,0,0,0,.305.781A1.057,1.057,0,0,0,202.851-809.994Zm9.5-6.178a2.558,2.558,0,0,0,1.882-.765,2.558,2.558,0,0,0,.765-1.882,2.558,2.558,0,0,0-.765-1.882,2.558,2.558,0,0,0-1.882-.765,2.558,2.558,0,0,0-1.882.765,2.558,2.558,0,0,0-.765,1.882,2.558,2.558,0,0,0,.765,1.882A2.558,2.558,0,0,0,212.356-816.171Zm-5.3-13.238h10.591v-3.53a5.107,5.107,0,0,0-1.544-3.751,5.106,5.106,0,0,0-3.751-1.544,5.106,5.106,0,0,0-3.751,1.544,5.107,5.107,0,0,0-1.544,3.751Zm-5.3,19.416v0Z' transform='translate(-200 840)' fill='%23999'/%3E%3C/svg%3E%0A");
+    background-size: 25px auto;
+}
+.cts_biz05 .join_group .info .info_box .user_id input,
+.cts_biz05 .join_group .info .info_box .user_pw input {
+    width: calc(100% - 140px);
+}
+.cts_biz05 .join_group .info .info_box input[type="text"],
+.cts_biz05 .join_group .info .info_box input[type="password"]{
+    font-size: 20px;
+    font-weight: 700;
+    color: #2d2d2d;
+    border: 0;
+    outline: 0;
+}
+.cts_biz05 .join_group .info .info_box input[type="text"]::placeholder,
+.cts_biz05 .join_group .info .info_box input[type="password"]::placeholder{
+    font-weight: 400;
+    color: #adadad;
+}
+.cts_biz05 .join_group .info .info_box .user_mail input {
+    width: calc(100% - 275px);
+}
+.cts_biz05 .join_group .info .info_box .user_mail select{
+    font-size: 20px;
+    width: 140px;
+    border: 0;
+    outline: 0;
+}
+.cts_biz05 .join_group .info .info_box .user_gender {
+    justify-content: center; /* 좌우 가운데 */
+}
+.cts_biz05 .join_group .info .info_box .user_gender input {
+    display: none;
+}
+.cts_biz05 .join_group .info .info_box .user_gender label {
+    width: calc(50% - 55px);
+    margin: 0 20px;
+    line-height: 48px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 20px;
+    color: #2d2d2d;
+    text-align: center;
+}
+.cts_biz05 .join_group .info .info_box .user_gender input:checked + label {
+    font-weight: 700;
+    color: #D20031;
+    border: 2px solid #D20031;
+}
+.cts_biz05 .join_group .info input[type="submit"] {
+    width: 100%;
+    line-height: 60px;
+    background-color: #D20031;
+    border: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer; /* 오버시 마우스 포인터 손가락 */
+}
+@media screen and (max-width:1024px){  
+    .cts_biz05 .join_group h2 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .cts_biz05 .join_group .agree_box {
+        height: 200px;
+        padding: 10px;
+        margin-top: 10px;
+    }
+    .cts_biz05 .join_group .agree_btn {
+        margin: 15px 0 70px 0;
+    }
+    .cts_biz05 .join_group .agree_btn label::before {
+        width: 18px;
+        height: 18px;
+    }
+    .cts_biz05 .join_group .info .info_box {
+        border: 2px solid #ccc;
+        border-radius: 10px;
+        margin-bottom: 30px;
+    }
+    .cts_biz05 .join_group .info .info_box > div {
+        height: 60px;
+    }
+    .cts_biz05 .join_group .info .info_box .user_id label,
+    .cts_biz05 .join_group .info .info_box .user_mail label,
+    .cts_biz05 .join_group .info .info_box .user_pw label{
+        width: 80px;    
+    }
+    .cts_biz05 .join_group .info .info_box .user_id label {
+        background-size: 23px auto;
+    }
+    .cts_biz05 .join_group .info .info_box .user_mail label {
+        background-size: 21px auto;
+    }
+    .cts_biz05 .join_group .info .info_box .user_pw label {
+        background-size: 18px auto;
+    }
+    .cts_biz05 .join_group .info .info_box .user_id input,
+    .cts_biz05 .join_group .info .info_box .user_pw input {
+        width: calc(100% - 130px);
+    }
+    .cts_biz05 .join_group .info .info_box input[type="text"],
+    .cts_biz05 .join_group .info .info_box input[type="password"]{
+        font-size: 15px;
+    }
+    .cts_biz05 .join_group .info .info_box .user_mail input {
+        width: calc(100% - 210px);
+    }
+    .cts_biz05 .join_group .info .info_box .user_mail select{
+        font-size: 15px;
+        width: 110px;
+    }
+    .cts_biz05 .join_group .info .info_box .user_gender label {
+        width: calc(50% - 35px);
+        margin: 0 18px;
+        line-height: 35px;
+        font-size: 15px;
+    }
+    .cts_biz05 .join_group .info input[type="submit"] {
+        line-height: 40px;
+        font-size: 15px;
+    }
 }

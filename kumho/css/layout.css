@@ -656,6 +656,7 @@
     .lnb {
         top: 350px;
         overflow-x: auto;
+        overflow-y: hidden;
     }
     .lnb ul {
         justify-content: flex-start;
