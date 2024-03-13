@@ -3,23 +3,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 /* 한글웹폰트 */
 @font-face { 
-    font-family:'S-CoreDream'; 
-    src:url('../fonts/SCoreDreamRegular.woff') format('woff'); 
+    font-family:'Pretendard'; 
+    src:url('../fonts/Pretendard-Regular.woff') format('woff'); 
     font-weight:400; font-style:normal; 
 }
 @font-face { 
-    font-family:'S-CoreDream'; 
-    src:url('../fonts/SCoreDreamExtraBold.woff') format('woff'); 
+    font-family:'Pretendard'; 
+    src:url('../fonts/Pretendard-Bold.woff') format('woff'); 
     font-weight:700; font-style:normal; 
 }
 @font-face { 
-    font-family:'S-CoreDream'; 
-    src:url('../fonts/SCoreDreamRegular.woff2') format('woff2');  
+    font-family:'Pretendard'; 
+    src:url('../fonts/Pretendard-Regular.woff2') format('woff2');  
     font-weight:400; font-style:normal; 
 }
 @font-face { 
-    font-family:'S-CoreDream'; 
-    src:url('../fonts/SCoreDreamExtraBold.woff2') format('woff2'); 
+    font-family:'Pretendard'; 
+    src:url('../fonts/Pretendard-Bold.woff2') format('woff2'); 
     font-weight:700; font-style:normal; 
 }
 
@@ -33,7 +33,7 @@
 }
 
 html, body {
-    font-family: 'Montserrat','S-CoreDream', sans-serif; 
+    font-family: 'Pretendard', sans-serif; 
     /* 서체 - serif:명조  sans-serif : 고딕 */
     font-size: 15px;  /* 글자크기 */
     color: #3D3D3D; /* 글자색상 */
@@ -41,9 +41,12 @@ html, body {
     line-height: 1.4; /* auto */
     word-break: keep-all;  /* 단어를 묶어서 줄바꿈 */
     word-wrap: break-word; /* 만약 단어가 엄청 길면 분리해서 줄바꿈 허용 */
-    }   
+}
+.f_Montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
 .wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
-    width: 1280PX; /* 홈페이지 넓이 */
+    width: 1600PX; /* 홈페이지 넓이 */
     margin: 0 auto; /* 가운데 정렬 */
 }
 #wrap { /* id="wrap"에 적용되는 스타일 */
@@ -80,7 +83,7 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
 
 
 /* wrapper의 사이즈 1280 + 좌우 여백 40px = 1320 */
-@media screen and (max-width:1320px){
+@media screen and (max-width:1640px){
     .wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
         width: auto; 
         /* 모바일에서는 홈페이지 넓이를 제한하면 안됨
@@ -90,11 +93,15 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
     }
 } /* media*/
 
+@media screen and (max-width:1024px){
+    html, body {
+        font-size: 15px;  /* 글자크기 */
+    }   
+}
 @media screen and (max-width:768px){
     html, body {
-        font-size: 13px;  /* 글자크기 */
-        }   
-
+        font-size: 15px;  /* 글자크기 */
+    } 
 }
 
 /* 
