@@ -35,7 +35,7 @@
 html, body {
     font-family: 'Pretendard', sans-serif; 
     /* 서체 - serif:명조  sans-serif : 고딕 */
-    font-size: 15px;  /* 글자크기 */
+    font-size: 17px;  /* 글자크기 */
     color: #3D3D3D; /* 글자색상 */
     font-weight: 400; /* 글자의 두께 */
     line-height: 1.4; /* auto */
@@ -92,15 +92,19 @@ a태그중에서 href="#gnb"인 a태그의 스타일 */
         /* 안쪽으로 좌우 여백이 20px씩 들어가게 함 */
     }
 } /* media*/
-
-@media screen and (max-width:1024px){
+@media screen and (max-width:1320px){
     html, body {
         font-size: 15px;  /* 글자크기 */
+    }  
+}
+@media screen and (max-width:1024px){
+    html, body {
+        font-size: 14px;  /* 글자크기 */
     }   
 }
 @media screen and (max-width:768px){
     html, body {
-        font-size: 15px;  /* 글자크기 */
+        font-size: 13px;  /* 글자크기 */
     } 
 }
 

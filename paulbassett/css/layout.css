@@ -1,7 +1,392 @@
 /* 
     파일명 : layout.css 
     작성자 : 이윤정
-    작성일 : 24.02.28
+    작성일 : 24.03.14
     설  명 : 모든 페이지의 레이아웃 요소 ( header/footer/서브레이아웃 )
              메뉴명, sub_visual 이미지스타일, 탭메뉴
 */
+header {
+    position: fixed; /* 상단에 고정 */
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: #fff;
+    transition: transform 0.5s; /* transform 0.5s 해당속성만 애니메이션 */
+}
+header .head_top {
+    height: 75px;
+}
+header .head_sub {
+    height: 75px;
+}
+header .logo {
+    position: absolute; /* header 기준으로 정렬 */
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%, 0);
+    /* 가운데 정렬을 absolute로 해야하고 넓이가 변경될 수 있음
+        left: calc(50% - 넓이반)으로 가운데 정렬을 하면
+        넓이가 변경되면 계속 값을 변경해야 함
+        넓이가 변경되어도 계속 가운데 위치시키려면
+        left: 50%   ---------- 나의 정렬 기준에서 가운데
+        translate(-50%, 0) --- 나 자신 사이즈의 절반을 왼쪽으로 이동   
+    */
+}
+header .logo a {
+    display: block;
+    width: 96px;
+    height: 67px;
+    background: url(../images/common/logo.svg) no-repeat center center / contain;
+    font-size: 0;
+    line-height: 0;
+}
+header .tnb1 {
+    float: left;
+    margin: 15px 0 0 0;
+}
+header .tnb2 {
+    float: right;
+    margin: 15px 0 0 0;
+}
+header .tnb1 ul,
+header .tnb2  ul {
+    display: flex;
+}
+header .tnb1 ul li,
+header .tnb2  ul li {
+    margin-right: 32px;
+    position: relative; /* after 정렬의 기준 */
+}
+header .tnb1 ul li:last-child,
+header .tnb2  ul li:last-child {
+    margin-right: 0;
+}
+header .tnb1 ul li::after,
+header .tnb2  ul li::after {
+    position: absolute;
+    right: -15px;
+    top: 9px;
+    width: 3px;
+    height: 3px;
+    border-radius: 100%;
+    background-color: #ccc;
+    content: "";
+}
+header .tnb1 ul li:last-child:after,
+header .tnb2  ul li:last-child:after {
+    display: none;
+}
+header .gnb .gnb_open {
+    display: none;
+}
+header .gnb .gnb_close {
+    display: none;
+}
+header .gnb .depth1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+header .gnb .depth1 > li {
+    width: 16.66%; /* depth1의 넓이에 16.66% */
+}
+header .gnb .depth1 > li > a {
+    display: block;
+    line-height: 75px;
+    font-size: 1.471rem;
+    font-weight: 700;
+    color: #1d1d1d;
+    white-space: nowrap;
+}
+header .gnb .depth2  {
+    padding: 20px 0 0 0;
+    /* 오버해서 나타나는 메뉴의 여백은 padding으로 줘야 out 되지 않음 */
+    display: none;
+}
+header .gnb .depth2 > li > a {
+    display: block;
+    line-height: 40px;
+    font-size: 1.176rem;
+    white-space: nowrap;
+}
+@media screen and (max-width:1320px){
+    /* header .gnb .depth1 > li > a {
+        line-height: 75px;
+        font-size: 22px;
+    }
+    header .gnb .depth2  {
+        padding: 15px 0 0 0;
+    }
+    header .gnb .depth2 > li > a {
+        font-size: 17px;
+    } */
+}
+@media screen and (max-width:1024px){
+
+}
+
+
+@media screen and (min-width:1025px){ /*1025px 이상*/
+    /* 메뉴오버 */
+    header.menu_over::before {
+        position: absolute; /* header 기준으로 정렬*/
+        left: 0;
+        top: 0;
+        z-index: -1;
+        width: 100%;
+        height: 500px;
+        content: "";
+        background-color: #fff;
+    }
+    header.menu_over::after {
+        position: absolute;
+        left: 0;
+        top: 150px;
+        width: 100%;
+        height: 1px;
+        background-color: #fce3e6;
+        content: "";
+    }
+    header.menu_over .gnb .depth2 {
+        display: block;
+    }
+    header .gnb .depth1 > li.on > a {
+        color: #e80a4d;
+    }
+    header .gnb .depth1 > li.on > a span {
+        position: relative;
+    }
+    header .gnb .depth1 > li.on > a span::after {
+        position: absolute;
+        left: -5px;
+        bottom: -26px;
+        z-index: 1;
+        width: calc(100% + 10px);
+        height: 4px;
+        background-color: #e80a4d;
+        content: "";
+    }
+    header .gnb .depth2 > li > a:hover {
+        color: #e80a4d;
+        font-weight: 700;
+    }
+
+    /* 메뉴고정 */
+    header.fixed {
+        height: 100px;
+        border-bottom: 1px solid #ededed;
+        background-color: #fef2f2;
+    }
+    header.fixed .wrapper {
+        width: auto;
+    }
+    header.fixed .head_top {
+        height: auto;
+    }
+    header.fixed .logo {
+        left: 40px;
+        top: 20px;
+        transform: translate(0, 0);
+    }
+    header.fixed .tnb1,
+    header.fixed .tnb2 {
+        display: none;
+    }
+    header.fixed .gnb .depth1 {
+        justify-content: flex-end;
+        margin-left: 170px;
+    }
+    header.fixed .gnb .depth1 > li {
+        max-width: 250px; 
+    } 
+    header.fixed .gnb .depth1 > li > a {
+        line-height: 100px;
+        font-size: 1.176rem;
+    }
+    header .gnb .depth2 > li > a {
+        font-size: 1rem;
+    }
+    header.fixed.menu_over::after {
+        top: 100px;
+    }
+    header.fixed.menu_over .gnb .depth1 > li.on > a span::after {
+        bottom: -41px;
+    }
+}
+@media screen and (max-width:1024px){ 
+    header {
+        height: 100px;
+    }
+    header .head_top {
+        height: auto;
+    }
+    header .head_sub {
+        height: auto;
+    }
+    header .logo {
+        left: 20px;
+        top: 18px;
+        transform: translate(0, 0);
+    }
+    header .logo a {
+        display: block;
+        width: 96px;
+        height: 67px;
+        background: url(../images/common/logo.svg) no-repeat center center / contain;
+        font-size: 0;
+        line-height: 0;
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+        position: absolute; /* header 기준으로*/
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #e80a4d;
+        color: #fff;
+    }
+    header .gnb .depth1 {
+        margin-top: 100px;
+        height: calc(100vh - 100px);
+        overflow-x: hidden; /* 좌우 스크롤 금지*/
+        overflow-y: auto; /* 위아래 스크롤*/
+        display: block;
+    }
+    header .gnb .depth1 > li {
+        width: auto;
+    }
+    header .gnb .depth1 > li > a {
+        color: #fff;
+        font-size: 1.571rem;
+        font-weight: 400;
+        line-height: 50px;
+        position: relative;
+    }
+    header .gnb .depth1 > li > a::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.5);
+        content: "";
+    }
+    header .gnb .depth1 > li.on > a::before {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        content: "";
+    }
+    header .gnb .depth1 > li > a span {
+        background-color: #e80a4d;
+        position: relative;
+        padding: 0 10px;
+    }
+    header .gnb .depth1 > li.on > a {
+        font-weight: 700;
+    }
+    header .gnb .on .depth2 {
+        display: block;
+        padding: 20px 0 25px 0;
+    }
+    header .gnb .depth2 > li > a {
+        font-size: 1.176rem;
+        line-height: 30px;
+    }
+    header .tnb1,
+    header .tnb2 {
+        display: none;
+    } 
+    header .tnb2 {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        z-index: 1;
+        transform: translate(0, -50%);
+        margin: 0;
+    }
+    header .tnb2 ul li {
+        margin: 0;
+        border-width: 1px 1px 1px 0;
+        border-color: #e8f3f5;
+        border-style: solid;
+    }
+    header .tnb2 ul li:first-child {
+        border-left-width: 1px;
+    }
+    header .tnb2 ul li::after {
+        display: none;
+    }
+    header .tnb2 ul li a {
+        display: block;
+        padding: 10px 20px;
+    }
+    header .gnb .gnb_open {
+        display: block;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 14.5V13.5H19V14.5H5ZM5 10.5V9.5H19V10.5H5Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+        background-size: 60px auto;
+    }
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 0;
+        line-height: 0;
+        width: 100px;
+        height: 100px;
+        font-size: 0;
+        line-height: 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+    }
+    header .gnb .gnb_close {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.40008 18.3077L5.69238 17.6L11.2924 12L5.69238 6.40002L6.40008 5.69232L12.0001 11.2923L17.6001 5.69232L18.3078 6.40002L12.7078 12L18.3078 17.6L17.6001 18.3077L12.0001 12.7077L6.40008 18.3077Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-size: 60px auto;
+    }
+    /* 메뉴가 열렸을때*/
+    header.menu_open .gnb .gnb_wrap {
+        display: block;
+    } 
+    header.menu_open .gnb .gnb_open {
+        display: none;
+    }
+    header.menu_open .gnb .gnb_close {
+        display: block;
+    }
+    header.menu_open .tnb2 {
+        display: block;
+    }
+    
+}
+@media screen and (max-width:768px){ 
+    header {
+        height: 50px;
+    }
+    
+    header .logo {
+        top: 10px;
+    }
+    header .logo a {
+        width: 49px;
+        height: 35px;
+    }
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        width: 60px;
+        height: 50px;
+    }
+    header .gnb .gnb_open,
+    header .gnb .gnb_close {
+        background-size: 40px auto;
+    }
+    header .gnb .depth1 {
+        margin-top: 50px;
+        height: calc(100vh - 50px);
+    }
+}
