@@ -75,6 +75,44 @@ $(document).ready(function(){
                 $('header').removeClass('menu_over')
             }
         })
+        $('.header .gnb .depth1 > li').on('mouseenter focusin', function(){
+            if( device_status == 'pc'){
+                $('header .gnb ul.depth1 > li').removeClass('on')
+                $(this).addClass('on')    
+                $('header').addClass('menu_over')
+            } 
+        })
+        $('header').on('mouseleave', function(){
+            if( device_status == 'pc'){
+                $('header .gnb ul.depth1 > li').removeClass('on')
+                $('header').removeClass('menu_over')
+            }
+        })
+        $('header .gnb .depth1 > li:last-child > .depth2 > li:last-child > a').on('focusout', function(){
+            if( device_status == 'pc'){
+                $('header .gnb .depth1 > li').removeClass('on')
+                $('header').removeClass('menu_over')
+            } 
+        })
+        /* 
+        모바일메뉴
+        1차메뉴 a를 클릭하면 a링크 작동이 안되어야 하고
+        하위메뉴를 열어줌 
+    */
+        $("header .gnb ul.depth1 > li > a").on("click", function(e){
+            if( device_status = 'mobile'){
+                e.preventDefault();		/* a 태그의 href를 작동 시키지 않음 */
+                $(this).parent().toggleClass('on')
+            }
+        });
 
+        $('header .gnb .gnb_open').on('click', function(){
+            $('header').addClass('menu_open')
+            $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+        })
+        $('header .gnb .gnb_close').on('click', function(){
+            $('header').removeClass('menu_open')
+            $("html, body").css({overflow : "visible", height : "auto"}).unbind('scroll touchmove mousewheel');
+        })
 
 }) //$(document).ready
