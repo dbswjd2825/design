@@ -356,5 +356,52 @@
  }
 
 .sns {
+    margin: 200px 0 120px;
+}
+.sns h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4.118rem;
+    color: #1e1d3f;
+    font-weight: 900;
+    text-align: right;
+    margin: 0 200px 20px 0;
+}
+.sns .sns_ico ul {
+    display: flex;
+    justify-content: center;
+}
+.sns .sns_ico ul li {
+    margin: 0 10px;
+}
+.sns .sns_ico ul li a {
+    display: block;
+}
+.sns .list ul li a {
+    display: block;
+}
+.sns .list ul li a .photo {
+    position: relative; /* cate 정렬의 기준 */
+}
+.sns .list ul li a .photo img {
+    width: 100%;
+}
+.sns .list ul li a .photo .cate {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.sns .list ul li a strong {
+    display: block;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+footer {
     height: 1000px;
 }
