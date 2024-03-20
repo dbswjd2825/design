@@ -1,0 +1,132 @@
+/* 
+    파일명 : layout.css 
+    작성자 : 이윤정
+    작성일 : 24.03.20
+    설  명 : 모든 페이지의 레이아웃 요소 ( header/footer/서브레이아웃 )
+             메뉴명, sub_visual 이미지스타일, 탭메뉴
+*/
+
+header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+}
+header .inner {
+    display: flex;
+}
+header .logo {
+    margin-top: 24px;
+}
+header .logo a {
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    width: 190px;
+    height: 43px;
+    background: url(../images/common/logo_w.svg) no-repeat center center/contain;
+}
+header .gnb .gnb_open {
+    display: none;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    padding: 35px 30px;
+    font-size: 20px;
+}
+header .tnb ul {
+    display: flex;
+    margin-left: 10px;
+}
+header .tnb ul li {
+    margin: 36px 8px;
+}
+header .tnb ul li a {
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+header .tnb ul li.search a {
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5286 15.2321L20.4544 19.1579L19.158 20.4543L15.2322 16.5285C13.8207 17.6578 12.0305 18.3334 10.0835 18.3334C5.5295 18.3334 1.8335 14.6374 1.8335 10.0834C1.8335 5.52937 5.5295 1.83337 10.0835 1.83337C14.6375 1.83337 18.3335 5.52937 18.3335 10.0834C18.3335 12.0304 17.6579 13.8205 16.5286 15.2321ZM14.6895 14.5519C15.8104 13.3968 16.5002 11.821 16.5002 10.0834C16.5002 6.53817 13.6287 3.66671 10.0835 3.66671C6.53829 3.66671 3.66683 6.53817 3.66683 10.0834C3.66683 13.6286 6.53829 16.5 10.0835 16.5C11.8211 16.5 13.3969 15.8102 14.5521 14.6893L14.6895 14.5519Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+header .tnb ul li.lang a  {
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.0002 20.1667C5.93755 20.1667 1.8335 16.0626 1.8335 11C1.8335 5.93743 5.93755 1.83337 11.0002 1.83337C16.0627 1.83337 20.1668 5.93743 20.1668 11C20.1668 16.0626 16.0627 20.1667 11.0002 20.1667ZM8.90101 18.0285C8.01864 16.1571 7.47771 14.0931 7.35853 11.9167H3.72356C4.08666 14.8285 6.15685 17.2102 8.90101 18.0285ZM9.19497 11.9167C9.33284 14.1523 9.97148 16.2523 11.0002 18.106C12.0288 16.2523 12.6675 14.1523 12.8054 11.9167H9.19497ZM18.2768 11.9167H14.6418C14.5226 14.0931 13.9817 16.1571 13.0993 18.0285C15.8435 17.2102 17.9137 14.8285 18.2768 11.9167ZM3.72356 10.0834H7.35853C7.47771 7.907 8.01864 5.84294 8.90101 3.97155C6.15685 4.78993 4.08666 7.17158 3.72356 10.0834ZM9.19497 10.0834H12.8054C12.6675 7.84783 12.0288 5.74777 11.0002 3.89403C9.97148 5.74777 9.33284 7.84783 9.19497 10.0834ZM13.0993 3.97155C13.9817 5.84294 14.5226 7.907 14.6418 10.0834H18.2768C17.9137 7.17158 15.8435 4.78993 13.0993 3.97155Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+header.black {
+    color: #1d1d1d;
+}
+header.black .logo a {
+    background-image: url(../images/common/logo.svg);
+}
+header.black .tnb ul li.search a {
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.5286 15.232L20.4544 19.1578L19.158 20.4541L15.2322 16.5283C13.8207 17.6577 12.0305 18.3333 10.0835 18.3333C5.5295 18.3333 1.8335 14.6373 1.8335 10.0833C1.8335 5.52925 5.5295 1.83325 10.0835 1.83325C14.6375 1.83325 18.3335 5.52925 18.3335 10.0833C18.3335 12.0303 17.6579 13.8204 16.5286 15.232ZM14.6895 14.5518C15.8104 13.3966 16.5002 11.8209 16.5002 10.0833C16.5002 6.53804 13.6287 3.66659 10.0835 3.66659C6.53829 3.66659 3.66683 6.53804 3.66683 10.0833C3.66683 13.6285 6.53829 16.4999 10.0835 16.4999C11.8211 16.4999 13.3969 15.8101 14.5521 14.6892L14.6895 14.5518Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+}
+header.black .tnb ul li.lang a  {
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='%231d1d1d' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11.0002 20.1667C5.93755 20.1667 1.8335 16.0626 1.8335 11C1.8335 5.93743 5.93755 1.83337 11.0002 1.83337C16.0627 1.83337 20.1668 5.93743 20.1668 11C20.1668 16.0626 16.0627 20.1667 11.0002 20.1667ZM8.90101 18.0285C8.01864 16.1571 7.47771 14.0931 7.35853 11.9167H3.72356C4.08666 14.8285 6.15685 17.2102 8.90101 18.0285ZM9.19497 11.9167C9.33284 14.1523 9.97148 16.2523 11.0002 18.106C12.0288 16.2523 12.6675 14.1523 12.8054 11.9167H9.19497ZM18.2768 11.9167H14.6418C14.5226 14.0931 13.9817 16.1571 13.0993 18.0285C15.8435 17.2102 17.9137 14.8285 18.2768 11.9167ZM3.72356 10.0834H7.35853C7.47771 7.907 8.01864 5.84294 8.90101 3.97155C6.15685 4.78993 4.08666 7.17158 3.72356 10.0834ZM9.19497 10.0834H12.8054C12.6675 7.84783 12.0288 5.74777 11.0002 3.89403C9.97148 5.74777 9.33284 7.84783 9.19497 10.0834ZM13.0993 3.97155C13.9817 5.84294 14.5226 7.907 14.6418 10.0834H18.2768C17.9137 7.17158 15.8435 4.78993 13.0993 3.97155Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+}
+@media screen and (max-width:1024px){
+    header {
+        padding: 0 20px;
+    }
+    header .logo {
+        margin-top: 34px;
+    }
+    header .logo a {
+        width: 138px;
+        height: 33px;
+    }
+    header .gnb ul li a {
+        display: block;
+        padding: 40px 15px;
+        font-size: 17px;
+    }
+}
+@media screen and (max-width:768px){ 
+    header {
+        height: 50px;
+    }
+    header .logo {
+        margin-top: 12px;
+    }
+    header .logo a {
+        width: 96px;
+        height: 23px;
+    }
+    header .gnb ul {
+        display: none;
+    }
+    header .gnb .gnb_open {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60px;
+        height: 50px;
+        font-size: 0;
+        line-height: 0;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 24px auto;
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.56335H21V6.56335H3V4.56335ZM9 11.5634H21V13.5634H9V11.5634ZM3 18.5634H21V20.5634H3V18.5634Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
+    header.black .gnb .gnb_open {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='25' viewBox='0 0 24 25' fill='%231C2542' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 4.56335H21V6.56335H3V4.56335ZM9 11.5634H21V13.5634H9V11.5634ZM3 18.5634H21V20.5634H3V18.5634Z' fill='%231C2542'/%3E%3C/svg%3E%0A");
+    }
+    header .tnb {
+        display: none;
+    }
+}

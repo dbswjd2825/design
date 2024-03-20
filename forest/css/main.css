@@ -1,0 +1,83 @@
+@import url(default.css);
+@import url(common.css);
+@import url(layout.css);
+
+/* 
+    파일명 : main.css 
+    작성자 : 이윤정
+    작성일 : 24.03.20
+    설  명 : 메인페이지에만 틀어가는 스타일을 저장
+            ( header와 footer 빼고 전부 다 )
+*/
+
+
+/* page에서 자동생성한 pagenation
+    body #fp-nav.fp-left 동일한 선택자 두개가 존재할때 
+    내꺼를 먼저 적용되게 하기 위해서 앞에 body 추가함
+    body라는 상위요소부터 선택자를 입력한 스타일이 먼저 적용됨
+*/
+body #fp-nav::before {
+    position: absolute;
+    left: 13px;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+    content: "";
+}
+body #fp-nav.fp-left {
+    left: 40px;
+}
+body #fp-nav ul li .fp-tooltip {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 15px;
+    font-family: inherit;
+    opacity: 1;
+    width: auto;
+}
+body #fp-nav ul li a span, body .fp-slidesNav ul li a span {
+    height: 5px;
+    width: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    left: 50%;
+    top: 50%;
+    margin: -2px 0 0 -3px;
+}
+body #fp-nav ul li a.active span, 
+body .fp-slidesNav ul li a.active span, 
+body #fp-nav ul li:hover a.active span, 
+body .fp-slidesNav ul li:hover a.active span {
+    height: 5px;
+    width: 5px;
+    margin: -2px 0 0 -3px;
+    background-color: #fff;
+}
+body#fp-nav ul li:hover .fp-tooltip, body #fp-nav.fp-show-active a.active + .fp-tooltip {
+    color: #fff;
+}
+body #fp-nav ul li:last-child {
+    display: none;
+}
+body #fp-nav ul li, body .fp-slidesNav ul li {
+    margin: 20px 7px;
+}
+
+/* 검은색일때*/
+body #fp-nav[date-color='black']::before {
+    background-color: #666;
+}
+body #fp-nav[date-color='black'] ul li .fp-tooltip {
+    color: #666;
+}
+body #fp-nav[date-color='black'] ul li a span, body .fp-slidesNav ul li a span {
+    background: #999;
+}
+body #fp-nav[date-color='black'] ul li a.active span, 
+body .fp-slidesNav ul li a.active span, 
+body #fp-nav[date-color='black'] ul li:hover a.active span, 
+body .fp-slidesNav ul li:hover a.active span {
+    background-color: #1d1d1d;
+}
+body#fp-nav[date-color='black'] ul li:hover .fp-tooltip, body #fp-nav[date-color='black'].fp-show-active a.active + .fp-tooltip {
+    color: #1d1d1d;
+}
