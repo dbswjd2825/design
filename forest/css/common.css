@@ -39,7 +39,8 @@ html, body {
     font-size: 15px;  /* 글자크기 */
     color: #3D3D3D; /* 글자색상 */
     font-weight: 400; /* 글자의 두께 */
-    line-height: 1.4; /* auto */
+    line-height: 1.2; /* auto */
+    letter-spacing: -0.02em; /* 자간 */
     word-break: keep-all;  /* 단어를 묶어서 줄바꿈 */
     word-wrap: break-word; /* 만약 단어가 엄청 길면 분리해서 줄바꿈 허용 */
 }
