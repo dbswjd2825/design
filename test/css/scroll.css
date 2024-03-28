@@ -1,0 +1,269 @@
+@import url(default.css);
+@font-face { 
+    font-family:'S-CoreDream'; 
+    src:url('../../kumho/fonts/SCoreDreamRegular.woff') format('woff'); 
+    font-weight:400; font-style:normal; 
+}
+@font-face { 
+    font-family:'S-CoreDream'; 
+    src:url('../../kumho/fonts/SCoreDreamExtraBold.woff') format('woff'); 
+    font-weight:700; font-style:normal; 
+}
+@font-face { 
+    font-family:'S-CoreDream'; 
+    src:url('../../kumho/fonts/SCoreDreamRegular.woff2') format('woff2');  
+    font-weight:400; font-style:normal; 
+}
+@font-face { 
+    font-family:'S-CoreDream'; 
+    src:url('../../kumho/fonts/SCoreDreamExtraBold.woff2') format('woff2'); 
+    font-weight:700; font-style:normal; 
+}
+*::selection {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+*::-moz-selection { /* 호환성을 위한 코드 */
+    background-color: #1d1d1d;  
+    color: #fff;
+}
+
+html, body {
+    font-family: 'S-CoreDream', sans-serif; 
+    /* 서체 - serif:명조  sans-serif : 고딕 */
+    font-size: 15px;  /* 글자크기 */
+    color: #3D3D3D; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.4; /* auto */
+    word-break: keep-all;  /* 단어를 묶어서 줄바꿈 */
+    word-wrap: break-word; /* 만약 단어가 엄청 길면 분리해서 줄바꿈 허용 */
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280PX; /* 홈페이지 넓이 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 100%;
+    overflow: hidden; 
+}
+.skipnav {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    z-index: 1000000000000;
+    width: 100%;
+}
+.skipnav a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    background-color: #FF1414;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+}
+/* 속성선택자
+a태그중에서 href="#gnb"인 a태그의 스타일 */
+.skipnav a[href="#gnb"] {
+    background-color: #FF9314;
+}
+.skipnav a:focus {
+    top: 100px;
+}
+
+
+/* wrapper의 사이즈 1280 + 좌우 여백 40px = 1320 */
+@media screen and (max-width:1640px){
+    .wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+        width: auto; 
+        /* 모바일에서는 홈페이지 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 구현되어야 하기 떄문에 */
+        margin: 0 20px; 
+        /* 안쪽으로 좌우 여백이 20px씩 들어가게 함 */
+    }
+} /* media*/
+@media screen and (max-width:1320px){
+    html, body {
+        font-size: 15px;  /* 글자크기 */
+    }  
+}
+@media screen and (max-width:1024px){
+    html, body {
+        font-size: 14px;  /* 글자크기 */
+    }   
+}
+@media screen and (max-width:768px){
+    html, body {
+        font-size: 13px;  /* 글자크기 */
+    } 
+}
+.sec01 .inner {
+    margin: 174px 0 59px 0;
+}
+.sec01 .tit {
+    position: relative; /* span 정렬의 기준 */
+}
+.sec01 .tit span {
+    display: block;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+.sec01 .tit span br {
+    display: none;
+}
+.sec01 .tit .txt_black {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    overflow: hidden; /* 벗어난 요소 숨김 */
+    white-space: nowrap; /* 줄바꿈 금지 */
+    color: #1d1d1d;
+    /* 애니메이션 적용 */
+    animation-name: sec01-ani;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes sec01-ani { /* 애니메이션을 효과를 미리 설정함 */
+	0% { width: 0; }  /* 애니메이션을 시작할때의 속성 */
+	100% { width: 100%; } /* 애니메이션이 종료될때의 속성 */
+}
+.sec01 .tit .txt_gray {
+    color: #ccc;
+}
+.sec01 .photo {
+    height: 300px;
+}
+.sec01 .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:1024px){
+    .sec01 .tit span {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width:768px){
+    .sec01 .tit span {
+        font-size: 30px;
+    }
+    .sec01 .tit span br {
+        display: block;
+    }
+    .sec01 .photo {
+        height: 200px;
+    }
+}
+.sec02 {
+    text-align: center;
+}
+.sec02 .tit {
+    margin: 200px 0 70px 0;
+}
+.sec02 .tit strong {
+    display: block;
+    font-size: 20px;
+}
+.sec02 .tit h2 {
+    font-size: 50px;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.sec02 .photo {
+    width: 408px;
+    height: 400px;
+    margin: 0 auto; /* 가운데 정렬 */
+    border-radius: 50px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.sec02 .photo.active {
+    border-radius: 0;
+}
+.sec02 .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sec03 {
+    margin: 200px 0 170px 0;
+    font-size: 60px;
+    color: #1d1d1d;
+    text-align: center;
+}
+.sec03 .line {
+    overflow: hidden;
+}
+.sec03 .line span {
+    display: block;
+    transform: translate(0, 1.2em);
+}
+.sec03.active .line span {
+    /* 애니메이션 적용 */
+    animation-name: sec03-ani;
+    animation-duration: 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+.sec03.active .line:nth-child(2) span{
+    animation-delay: 0.3s;
+}
+.sec03.active .line:nth-child(3) span{
+    animation-delay: 0.6s;
+}
+@keyframes sec03-ani { /* 애니메이션을 효과를 미리 설정함 */
+	0% { transform: translate(0, 1.2em); }  /* 애니메이션을 시작할때의 속성 */
+	100% { transform: translate(0, 0); } /* 애니메이션이 종료될때의 속성 */
+}
+.sec04 {
+    margin: 200px 0 170px 0;
+    font-size: 60px;
+    color: #1d1d1d;
+    text-align: center;
+}
+
+body {
+    transition: 1s;
+}
+body.black {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+body.black .sec03,
+body.black .sec04 {
+    color: #fff;
+}
+
+.sec05 {
+    margin: 260px 0 260px 0;
+}
+.sec05  .wrapper {
+    position: relative;
+}
+.sec05  .photo {
+    margin-left: 275px;
+    height: 500px;
+}
+.sec05  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sec05 .tit {
+    position: absolute;
+    left: 0;
+    top: 330px;
+    color: #fff;
+    font-size: 100px;
+    transition: 0.3s;
+}
+.sec06 {
+    height: 1000px;
+}

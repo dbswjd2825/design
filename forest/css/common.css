@@ -1,0 +1,114 @@
+@charset "utf-8"; /*이 css 문서는 UTF-8 방식으로 인코딩되어 있습니다. */
+/* 영문웹폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* 한글웹폰트 */
+@font-face { 
+    font-family:'Pretendard'; 
+    src:url('../fonts/Pretendard-Regular.woff') format('woff'); 
+    font-weight:400; font-style:normal; 
+}
+@font-face { 
+    font-family:'Pretendard'; 
+    src:url('../fonts/Pretendard-Bold.woff') format('woff'); 
+    font-weight:700; font-style:normal; 
+}
+@font-face { 
+    font-family:'Pretendard'; 
+    src:url('../fonts/Pretendard-Regular.woff2') format('woff2');  
+    font-weight:400; font-style:normal; 
+}
+@font-face { 
+    font-family:'Pretendard'; 
+    src:url('../fonts/Pretendard-Bold.woff2') format('woff2'); 
+    font-weight:700; font-style:normal; 
+}
+
+*::selection {
+    background-color: #1d1d1d;
+    color: #fff;
+}
+*::-moz-selection { /* 호환성을 위한 코드 */
+    background-color: #1d1d1d;  
+    color: #fff;
+}
+
+html, body {
+    /* 내가 정의한 웹폰트가 적용이 안되면, 맑은고딕(window용) 또는 애플고딕(맥용)으로 대체 */
+    font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', 'Dotum', '돋움', 'Apple SD Gothic Neo', '애플 SD 산돌고딕 Neo', sans-serif; 
+    /* 서체 - serif:명조  sans-serif : 고딕 */
+    font-size: 15px;  /* 글자크기 */
+    color: #3D3D3D; /* 글자색상 */
+    font-weight: 400; /* 글자의 두께 */
+    line-height: 1.2; /* auto */
+    letter-spacing: -0.02em; /* 자간 */
+    word-break: keep-all;  /* 단어를 묶어서 줄바꿈 */
+    word-wrap: break-word; /* 만약 단어가 엄청 길면 분리해서 줄바꿈 허용 */
+}
+.f_Montserrat{
+    font-family: 'Montserrat', sans-serif;
+}
+.wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+    width: 1280px; /* 홈페이지 넓이 */
+    margin: 0 auto; /* 가운데 정렬 */
+}
+#wrap { /* id="wrap"에 적용되는 스타일 */
+    min-width: 100%;
+    overflow: hidden; 
+}
+.skipnav {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    z-index: 1000000000000;
+    width: 100%;
+}
+.skipnav a {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    line-height: 50px;
+    text-align: center;
+    background-color: #FF1414;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 700;
+}
+/* 속성선택자
+a태그중에서 href="#gnb"인 a태그의 스타일 */
+.skipnav a[href="#gnb"] {
+    background-color: #FF9314;
+}
+.skipnav a:focus {
+    top: 100px;
+}
+
+
+/* wrapper의 사이즈 1280 + 좌우 여백 40px = 1320 */
+@media screen and (max-width:1320px){
+    .wrapper { /* 홈페이지의 넓이를 제한하고 가운데 정렬 */
+        width: auto; 
+        /* 모바일에서는 홈페이지 넓이를 제한하면 안됨
+        디바이스의 넓이에 맞춰서 꽉차게 구현되어야 하기 떄문에 */
+        margin: 0 20px; 
+        /* 안쪽으로 좌우 여백이 20px씩 들어가게 함 */
+    }
+} /* media*/
+@media screen and (max-width:1024px){
+    html, body {
+        font-size: 14px;  /* 글자크기 */
+    }   
+}
+@media screen and (max-width:768px){
+    html, body {
+        font-size: 13px;  /* 글자크기 */
+    } 
+}
+
+/* 
+    파일명 : common.css 
+    작성자 : 이윤정
+    작성일 : 24.02.28
+    설  명 : 홈페이지 전체에 공통으로 적용되는 스타일을 저장
+            ( header와 footer 스타일을 저장 )
+*/
